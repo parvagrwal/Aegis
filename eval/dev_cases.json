@@ -1,1 +1,137 @@
-{}
+[
+  {
+    "case_id": "D0_TEST_001",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "malicious",
+    "category": "swap",
+    "source": "unknown",
+    "tx_hash": "0xbeef0000"
+  },
+  {
+    "case_id": "D0_TEST_002",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "benign",
+    "category": "swap",
+    "source": "unknown",
+    "tx_hash": "0xbeef0001"
+  },
+  {
+    "case_id": "D0_TEST_003",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "malicious",
+    "category": "swap",
+    "source": "unknown",
+    "tx_hash": "0xbeef0002"
+  },
+  {
+    "case_id": "D0_TEST_004",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "benign",
+    "category": "swap",
+    "source": "unknown",
+    "tx_hash": "0xbeef0003"
+  },
+  {
+    "case_id": "D0_TEST_005",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "malicious",
+    "category": "swap",
+    "source": "unknown",
+    "tx_hash": "0xbeef0004"
+  },
+  {
+    "case_id": "D0_TEST_006",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "benign",
+    "category": "swap",
+    "source": "unknown",
+    "tx_hash": "0xbeef0005"
+  },
+  {
+    "case_id": "D0_TEST_007",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "malicious",
+    "category": "swap",
+    "source": "unknown",
+    "tx_hash": "0xbeef0006"
+  },
+  {
+    "case_id": "D0_TEST_008",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "benign",
+    "category": "swap",
+    "source": "unknown",
+    "tx_hash": "0xbeef0007"
+  },
+  {
+    "case_id": "D0_TEST_009",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "malicious",
+    "category": "swap",
+    "source": "unknown",
+    "tx_hash": "0xbeef0008"
+  },
+  {
+    "case_id": "D0_TEST_010",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "benign",
+    "category": "swap",
+    "source": "unknown",
+    "tx_hash": "0xbeef0009"
+  },
+  {
+    "case_id": "D0_TEST_011",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "malicious",
+    "category": "approve",
+    "source": "unknown",
+    "tx_hash": "0xbeef0010"
+  },
+  {
+    "case_id": "D0_TEST_012",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "benign",
+    "category": "approve",
+    "source": "unknown",
+    "tx_hash": "0xbeef0011"
+  },
+  {
+    "case_id": "D0_TEST_013",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "malicious",
+    "category": "approve",
+    "source": "unknown",
+    "tx_hash": "0xbeef0012"
+  },
+  {
+    "case_id": "D0_TEST_014",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "benign",
+    "category": "approve",
+    "source": "unknown",
+    "tx_hash": "0xbeef0013"
+  },
+  {
+    "case_id": "D0_TEST_015",
+    "chain": "ethereum",
+    "input_type": "tx",
+    "label": "malicious",
+    "category": "approve",
+    "source": "unknown",
+    "tx_hash": "0xbeef0014"
+  }
+]

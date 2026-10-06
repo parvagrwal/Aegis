@@ -1,0 +1,242 @@
+[
+  {
+    "case_id": "D0_TEST_001",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_002",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_003",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_004",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_005",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_006",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_007",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_008",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_009",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_010",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_011",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_012",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_013",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_014",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_015",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_016",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_017",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_018",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_019",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_020",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_021",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_022",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_023",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_024",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_025",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_026",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_027",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_028",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_029",
+    "expected": "malicious",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  },
+  {
+    "case_id": "D0_TEST_030",
+    "expected": "benign",
+    "verdict": "benign",
+    "score": -500,
+    "risk": "LOW",
+    "features": []
+  }
+]
