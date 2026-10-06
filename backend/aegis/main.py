@@ -16,3 +16,12 @@ async def get_case(case_id: str):
         features=["sim.approval_unlimited_to_eoa"],
         explanation="Flagged"
     )
+
+from aegis.models.ask import AskRequest, AskResponse
+
+@app.post("/api/v1/cases/{case_id}/ask", response_model=AskResponse)
+async def ask_case(case_id: str, req: AskRequest):
+    return AskResponse(
+        answer=f"The answer to '{req.question}' is based on the record.",
+        citations=["record.json:L10"]
+    )
