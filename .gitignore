@@ -1,0 +1,10 @@
+.env
+*.key
+__pycache__/
+.venv/
+out/
+cache/
+broadcast/
+hhgoa-next-task-aegis-problem-statement.md
+aegis-implementation-plan.md
+AGENT.md
