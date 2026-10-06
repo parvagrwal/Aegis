@@ -1,0 +1,4 @@
+[
+  {"case_id": "eval-final-001", "expected": "malicious", "verdict": "malicious", "score": 9000, "risk": "CRITICAL", "features": ["sim.approval_unlimited_to_eoa", "code.sweeper_pattern"]},
+  {"case_id": "eval-final-002", "expected": "benign", "verdict": "benign", "score": -500, "risk": "LOW", "features": []}
+]
