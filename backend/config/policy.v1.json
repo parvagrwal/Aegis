@@ -2,9 +2,16 @@
   "version": "policy.v1",
   "prior_logit_milli": -500,
   "calibration": {
-    "temperature": 1.05,
-    "fitted_on": "dev_cases.json",
-    "fitted_at": "2026-10-06T00:00:00Z"
+    "temperature": 1.0,
+    "status": "unfitted",
+    "method": "temperature scaling: p = sigmoid(score_milli/1000/T)",
+    "fitted_on": null,
+    "fitted_at": null,
+    "n_train": 0,
+    "n_holdout": 0,
+    "train_nll": null,
+    "holdout_nll": null,
+    "note": "No calibration fit has been run. The previous temperature=1.05 was a hardcoded mock. Run: python backend/aegis/policy/calibration.py --data <pairs.jsonl> with at least 20 labeled samples."
   },
   "bands": {
     "risk": {

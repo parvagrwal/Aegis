@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "name": "benign_transfer",
+    "description": "Plain ETH transfer between owned addresses (control case).",
+    "label": "benign",
+    "attack_family": "none",
+    "required_env": [
+      "REDTEAM_KEY"
+    ]
+  },
+  {
+    "name": "approve_drainer",
+    "description": "ERC20 approve(maxUint256) to a drainer EOA via RTToken.",
+    "label": "malicious",
+    "attack_family": "approval_drainer",
+    "required_env": [
+      "REDTEAM_KEY",
+      "RT_TOKEN_ADDRESS",
+      "DRAINER_ADDRESS"
+    ]
+  },
+  {
+    "name": "sweeper",
+    "description": "Send ETH to RTSweeper, which auto-forwards everything to its sink (drain pattern).",
+    "label": "malicious",
+    "attack_family": "sweeper_drain",
+    "required_env": [
+      "REDTEAM_KEY",
+      "RT_SWEEPER_ADDRESS"
+    ]
+  }
+]

@@ -36,10 +36,28 @@ def anchor_records(case_keys: list[bytes], versions: list[int], record_hashes: l
         [case_keys, versions, record_hashes, verdicts, confs]
     )
     
+    to_addr = "0x622E814975186227d21A12b105A1B7074649d6b6"
+    
+    estimate_payload = {
+        "jsonrpc": "2.0",
+        "method": "eth_estimateGas",
+        "params": [{
+            "from": acct.address,
+            "to": to_addr,
+            "data": "0x" + calldata.hex(),
+            "value": "0x0"
+        }],
+        "id": 1
+    }
+    estimate_r = httpx.post(get_rpc_url(), json=estimate_payload).json()
+    if "error" in estimate_r:
+        raise Exception(f"Gas estimate failed: {estimate_r['error']}")
+    gas_limit = int(int(estimate_r["result"], 16) * 1.3)
+    
     tx = {
-        "to": "0x622E814975186227d21A12b105A1B7074649d6b6", # AegisAttestor
+        "to": to_addr, # AegisAttestor
         "value": 0,
-        "gas": 200000,
+        "gas": gas_limit,
         "gasPrice": int(get_gas_price() * 1.5),
         "nonce": get_nonce(acct.address),
         "chainId": 11155111,

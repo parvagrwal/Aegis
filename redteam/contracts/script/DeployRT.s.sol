@@ -15,7 +15,7 @@ contract DeployRT is Script {
         RTToken token = new RTToken();
         RTNFT nft = new RTNFT();
         RTFactory factory = new RTFactory();
-        RTSweeper sweeper = new RTSweeper(0x0000000000000000000000000000000000000000);
+        RTSweeper sweeper = new RTSweeper(0xd95F19B25d61f9Fff081bBAc4ff8544e9caA1398);
         
         vm.stopBroadcast();
         
