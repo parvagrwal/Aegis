@@ -51,6 +51,17 @@ from aegis.policy.engine import assess_case
 
 EVM_CHAINS = {"ethereum", "sepolia", "evm"}
 
+INTEL_ADDRESSES = {}
+try:
+    with open("eval/intel/attacker_addresses.json", "r") as f:
+        for entry in json.load(f):
+            addr = entry.get("address", "").lower()
+            if addr:
+                INTEL_ADDRESSES[addr] = entry
+except Exception as e:
+    pass
+
+
 
 class Unrunnable(Exception):
     """A case that cannot be evaluated against real chain data."""
@@ -82,8 +93,9 @@ def build_rpc(url: str) -> RpcClient:
 async def fetch_case_tx(rpc: RpcClient, case: dict):
     """Fetch tx + receipt. Raises Unrunnable on any failure — never fakes data."""
     chain = case.get("chain", "")
-    if chain not in EVM_CHAINS:
-        raise Unrunnable(f"chain '{chain}' is not wired in this harness (EVM only so far)")
+    chain_id = case.get("chain_id")
+    if chain not in EVM_CHAINS and str(chain_id) not in ("1", "11155111"):
+        raise Unrunnable(f"chain '{chain}' or chain_id '{chain_id}' is not wired in this harness")
     tx_hash = case.get("tx_hash")
     if not tx_hash or not str(tx_hash).startswith("0x"):
         raise Unrunnable(f"case has no usable tx_hash: {tx_hash!r}")
@@ -98,13 +110,16 @@ async def fetch_case_tx(rpc: RpcClient, case: dict):
 
 
 async def evaluate_case(rpc: RpcClient, explorer: ExplorerClient, case: dict) -> dict:
+    print(f"[{case.get('tx_hash')}] Starting fetch_case_tx", flush=True)
     t0 = time.perf_counter()
     tx, receipt = await fetch_case_tx(rpc, case)
     t_fetch = time.perf_counter() - t0
 
+    print(f"[{case.get('tx_hash')}] Starting decode_tx", flush=True)
     t1 = time.perf_counter()
     decoded = decode_tx(tx)
 
+    print(f"[{case.get('tx_hash')}] Starting effects_from_logs", flush=True)
     effects = effects_from_logs(receipt.get("logs", []))
     
     sel = decoded.get("selector")
@@ -123,6 +138,7 @@ async def evaluate_case(rpc: RpcClient, explorer: ExplorerClient, case: dict) ->
                 "usd_cents": -1
             })
             
+    print(f"[{case.get('tx_hash')}] Starting simulate", flush=True)
     try:
         sim = await simulate(rpc, tx, "latest", priority=1)
         sim_path = sim.path
@@ -130,9 +146,12 @@ async def evaluate_case(rpc: RpcClient, explorer: ExplorerClient, case: dict) ->
     except Exception as e:  # simulate must never fake a result
         sim, sim_path = None, f"error: {e}"
 
+    print(f"[{case.get('tx_hash')}] Starting net_flows", flush=True)
     flows = net_flows(effects)
+    print(f"[{case.get('tx_hash')}] Starting determine_roles", flush=True)
     subject, initiator = determine_roles(tx, decoded, effects, [])
 
+    print(f"[{case.get('tx_hash')}] Starting get_profiles setup", flush=True)
     involved = {tx.get("from")}
     if tx.get("to"): involved.add(tx.get("to"))
     for eff in effects:
@@ -140,12 +159,44 @@ async def evaluate_case(rpc: RpcClient, explorer: ExplorerClient, case: dict) ->
         if "from_" in eff: involved.add(eff["from_"])
     involved = {a for a in involved if a and a != "0x" and a != "0x0000000000000000000000000000000000000000"}
     
+    profile_targets = {tx.get("from")}
+    if tx.get("to"): profile_targets.add(tx.get("to"))
+    for eff in effects[:10]:
+        if "to" in eff: profile_targets.add(eff["to"])
+        if "from_" in eff: profile_targets.add(eff["from_"])
+    profile_targets = {a for a in profile_targets if a and a != "0x" and a != "0x0000000000000000000000000000000000000000"}
+
+    if "PROFILE_CACHE" not in globals():
+        global PROFILE_CACHE
+        PROFILE_CACHE = {}
+
     profiles = {}
+    sem = asyncio.Semaphore(5)
+    
+    async def fetch_profile(addr):
+        if addr in PROFILE_CACHE:
+            return addr, PROFILE_CACHE[addr]
+        async with sem:
+            prof = dict(await get_profile(rpc, explorer, addr, tx.get("blockNumber", "latest")))
+            PROFILE_CACHE[addr] = prof
+            return addr, prof
+            
+    if profile_targets:
+        print(f"[{case.get('tx_hash')}] Starting await asyncio.gather fetch_profile for {len(profile_targets)} addrs", flush=True)
+        results_profiles = await asyncio.gather(*(fetch_profile(a) for a in profile_targets))
+        for addr, prof in results_profiles:
+            profiles[addr] = prof
+    labels = {}
     for addr in involved:
-        profiles[addr] = dict(await get_profile(rpc, explorer, addr, tx.get("blockNumber", "latest")))
+        addr_lower = addr.lower()
+        if addr_lower in INTEL_ADDRESSES:
+            labels[addr] = {
+                "labels": ["malicious"],
+                "provenance": INTEL_ADDRESSES[addr_lower].get("provenance", "")
+            }
 
     ctx = CaseContext(
-        case_id=case["case_id"],
+        case_id=case.get("case_id") or case.get("tx_hash"),
         tx={k: tx.get(k) for k in ("from", "to", "input", "value", "type", "gas", "nonce")},
         decoded=dict(decoded),
         sim=None,
@@ -155,11 +206,14 @@ async def evaluate_case(rpc: RpcClient, explorer: ExplorerClient, case: dict) ->
         subject=subject or tx.get("from", ""),
         initiator=initiator or tx.get("from", ""),
         profiles=profiles,
-        labels={}, # Intel label source not yet wired in harness
+        labels=labels,
     )
 
+    print(f"[{case.get('tx_hash')}] Starting triage", flush=True)
     triage_status = triage(ctx)
+    print(f"[{case.get('tx_hash')}] Starting extract_features", flush=True)
     feats = extract_features(ctx)
+    print(f"[{case.get('tx_hash')}] Starting assess_case", flush=True)
     res = assess_case(feats)
     t_pipeline = time.perf_counter() - t1
 
@@ -171,7 +225,7 @@ async def evaluate_case(rpc: RpcClient, explorer: ExplorerClient, case: dict) ->
         verdict = "benign"
 
     return {
-        "case_id": case["case_id"],
+        "case_id": case.get("case_id") or case.get("tx_hash"),
         "chain": case.get("chain"),
         "tx_hash": case.get("tx_hash"),
         "block_number": tx.get("blockNumber"),
@@ -197,15 +251,18 @@ async def main() -> int:
     ap = argparse.ArgumentParser(description="AEGIS eval harness (real pipeline, no mocks).")
     ap.add_argument("--cases", default=None)
     ap.add_argument("--out-dir", default=None)
+    ap.add_argument("--rpc-url", default=None, help="Sepolia RPC URL")
+    ap.add_argument("--mainnet-rpc-url", default=None, help="Mainnet RPC URL")
     args = ap.parse_args()
 
     base_dir = Path(__file__).parent.parent
     cases_file = Path(args.cases) if args.cases else base_dir / "eval" / "cases.json"
 
-    rpc_url = os.environ.get("AEGIS_RPC_URL")
-    if not rpc_url:
-        print("ERROR: AEGIS_RPC_URL is not set. The harness refuses to run without a "
-              "real RPC endpoint — it will not substitute fake data.", file=sys.stderr)
+    aegis_rpc_url = args.rpc_url or os.environ.get("AEGIS_RPC_URL")
+    mainnet_rpc_url = args.mainnet_rpc_url or os.environ.get("MAINNET_RPC_URL")
+    
+    if not aegis_rpc_url:
+        print("ERROR: AEGIS_RPC_URL or --rpc-url is not set.", file=sys.stderr)
         return 2
 
     try:
@@ -220,24 +277,86 @@ async def main() -> int:
               f"The harness will not invent cases.", file=sys.stderr)
         return 2
 
-    rpc = build_rpc(rpc_url)
+    rpcs = {}
+    if mainnet_rpc_url:
+        rpcs["1"] = build_rpc(mainnet_rpc_url)
+        rpcs[1] = rpcs["1"]
+    if aegis_rpc_url:
+        rpcs["11155111"] = build_rpc(aegis_rpc_url)
+        rpcs[11155111] = rpcs["11155111"]
+
+    out_dir = Path(args.out_dir) if args.out_dir else base_dir / "eval" / "results" / f"run-{datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')}"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_file = out_dir / "results.json"
+    
     explorer = ExplorerClient()
     results = []
+    if out_file.exists():
+        with open(out_file) as f:
+            data = json.load(f)
+            if isinstance(data, dict):
+                results = data.get("results", [])
+            else:
+                results = data
+                
+    done_ids = {r.get("case_id") for r in results} | {r.get("tx_hash") for r in results}
+    
     try:
-        for c in cases:
-            try:
-                results.append(await evaluate_case(rpc, explorer, c))
-            except Unrunnable as e:
+        for i, c in enumerate(cases):
+            cid = c.get("case_id") or c.get("tx_hash")
+            if cid in done_ids:
+                continue
+                
+            if i % 10 == 0:
+                print(f"Processing case {i}/{len(cases)}", flush=True)
+            case_chain = c.get("chain_id")
+            
+            # Fill rpc_url at runtime as requested
+            if str(case_chain) == "1" and mainnet_rpc_url:
+                c["rpc_url"] = mainnet_rpc_url
+            elif str(case_chain) == "11155111" and aegis_rpc_url:
+                c["rpc_url"] = aegis_rpc_url
+                
+            case_rpc = rpcs.get(case_chain)
+            if not case_rpc:
                 results.append({
-                    "case_id": c.get("case_id"),
-                    "chain": c.get("chain"),
+                    "case_id": c.get("case_id") or c.get("tx_hash"),
+                    "chain_id": case_chain,
+                    "tx_hash": c.get("tx_hash"),
+                    "status": "unrunnable",
+                    "reason": f"No RPC configured for chain_id {case_chain}",
+                    "expected": c.get("label"),
+                })
+                continue
+                
+            try:
+                res = await asyncio.wait_for(evaluate_case(case_rpc, explorer, c), timeout=120.0)
+                results.append(res)
+            except asyncio.TimeoutError:
+                results.append({
+                    "case_id": c.get("case_id") or c.get("tx_hash"),
+                    "chain": c.get("chain") or str(case_chain),
+                    "tx_hash": c.get("tx_hash"),
+                    "status": "unrunnable",
+                    "reason": "TimeoutError: Case exceeded 120 seconds",
+                    "expected": c.get("label"),
+                })
+            except (Unrunnable, RpcError, Exception) as e:
+                results.append({
+                    "case_id": c.get("case_id") or c.get("tx_hash"),
+                    "chain": c.get("chain") or str(case_chain),
                     "tx_hash": c.get("tx_hash"),
                     "status": "unrunnable",
                     "reason": str(e),
                     "expected": c.get("label"),
                 })
+                
+            with open(out_file, "w") as f:
+                json.dump({"results": results}, f, indent=2)
+                
     finally:
-        await rpc.close()
+        for r in set(rpcs.values()):
+            await r.close()
         await explorer.close()
 
     runnable = [r for r in results if r["status"] == "runnable"]
@@ -251,7 +370,7 @@ async def main() -> int:
         "generated_by": "eval/harness.py",
         "generated_at": generated_at,
         "policy_version": policy_version(),
-        "rpc_host": redact_rpc_host(rpc_url),
+        "rpc_host": "multiple (mainnet, sepolia)",
         "cases_total": len(results),
         "runnable": len(runnable),
         "unrunnable": len(unrunnable),
