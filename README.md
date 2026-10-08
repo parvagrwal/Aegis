@@ -26,7 +26,7 @@ uvicorn backend.aegis.main:app --port 8000
 
 **What the harness measures.** eval/harness.py fetches each case's real transaction from chain over JSON-RPC and runs the full pipeline -- decode -> effects -> features -> policy engine -> verdict -- recording per-case timings. Cases that cannot be fetched are marked **unrunnable** and excluded from accuracy. No mock data, ever.
 
-**Current state: 97.2% decisive accuracy.** We achieved 97.2% decisive accuracy (and 64.6% overall accuracy, with 125 uncertain cases) on 374 real-world cases. This was achieved via:
+**Current state: 97.6% decisive accuracy.** We achieved 97.6% decisive accuracy (and 66.2% overall accuracy, with 120 uncertain cases) on 374 real-world cases. This was achieved via:
 
 1. **sim.large_value_transfer**: A pure value-movement heuristic that aggregates both native ETH (	x.value and 
 ative_transfer effects) and ERC20 token transfers, calculating real-time USD equivalent via CoinGecko. Transactions moving more than  strictly trigger a +2500 weight (ELEVATED).

@@ -34,9 +34,10 @@ import harness  # noqa: E402  (real eval pipeline)
 from aegis.attest.anchor_evm import anchor_records  # noqa: E402
 from aegis.attest.record import canonical_serialize  # noqa: E402
 from eth_utils import keccak  # noqa: E402
+from aegis.chain.explorer import ExplorerClient
 
 SCENARIOS = ["benign_transfer", "approve_drainer", "sweeper"]
-VERDICT_INT = {"benign": 0, "malicious": 1}
+VERDICT_INT = {"benign": 0, "malicious": 1, "uncertain": 2}
 
 
 def confidence_bps(calibrated_score: float) -> int:
@@ -81,7 +82,7 @@ def wait_receipt(rpc_url: str, tx_hash: str, timeout_s: int = 300):
     raise fire.FireError(f"no receipt for attestation tx {tx_hash} after {timeout_s}s")
 
 
-async def run_drill(rpc_url: str, rpc, scenario: str, label: str) -> dict:
+async def run_drill(rpc_url: str, rpc, explorer, scenario: str, label: str) -> dict:
     row = {"scenario": scenario, "expected": label}
     try:
         tx_hash, t_block = fire_scenario(scenario)
@@ -89,7 +90,7 @@ async def run_drill(rpc_url: str, rpc, scenario: str, label: str) -> dict:
 
         case = {"case_id": f"LIVE-{scenario}", "chain": "sepolia",
                 "tx_hash": tx_hash, "label": label}
-        res = await harness.evaluate_case(rpc, case)
+        res = await harness.evaluate_case(rpc, explorer, case)
         row.update({
             "verdict": res["verdict"],
             "risk": res["risk"],
@@ -183,12 +184,16 @@ async def main() -> int:
 
     labels = {"benign_transfer": "benign", "approve_drainer": "malicious", "sweeper": "malicious"}
     rpc = harness.build_rpc(rpc_url)
+    explorer = ExplorerClient()
     rows = []
     try:
-        for scenario in SCENARIOS:
-            rows.append(await run_drill(rpc_url, rpc, scenario, labels[scenario]))
+        for i, scenario in enumerate(SCENARIOS):
+            if i > 0:
+                time.sleep(10)
+            rows.append(await run_drill(rpc_url, rpc, explorer, scenario, labels[scenario]))
     finally:
         await rpc.close()
+        await explorer.close()
 
     provenance = {
         "generated_at": datetime.now(timezone.utc).isoformat(),

@@ -1,0 +1,22 @@
+{
+  "total": 374,
+  "runnable": 373,
+  "unrunnable": 1,
+  "uncertain_count": 120,
+  "uncertain_rate": 0.32171581769436997,
+  "correct": 247,
+  "accuracy": 0.6621983914209115,
+  "accuracy_decisive": 0.9762845849802372,
+  "accuracy_basis": "runnable cases only",
+  "provenance": {
+    "generated_by": "eval/harness.py",
+    "generated_at": "2026-10-08T07:43:44.122836+00:00",
+    "policy_version": "policy.v1",
+    "rpc_host": "multiple (mainnet, sepolia)",
+    "cases_total": 374,
+    "runnable": 373,
+    "unrunnable": 1,
+    "accuracy_basis": "runnable cases only \u2014 unrunnable cases are excluded, never guessed",
+    "note": "No mock data. Every runnable case was fetched from chain and run through decode -> effects -> features -> policy engine."
+  }
+}
