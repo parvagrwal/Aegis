@@ -228,6 +228,7 @@ async def _live_scan_inner(tx_hash: str, chain_id: int) -> dict:
             "calibrated_score": res.get("calibrated_score"),
             "temperature": res.get("temperature"),
             "features": res["features"],
+            "effects": [e if isinstance(e, dict) else getattr(e, "to_dict", lambda: e)() for e in effects] if effects else [],
             "triage": triage_status,
             "sim_path": sim_path,
             "timings": {

@@ -22,14 +22,31 @@ pip install -r backend/requirements.lock.txt
 uvicorn backend.aegis.main:app --port 8000
 ```
 
+
+## Agentic Defense Flow
+When a transaction is flagged as malicious, AEGIS actively neutralizes the threat using a fully autonomous agent loop:
+
+```mermaid
+flowchart TD
+    A[Detect Malicious Event] --> B[LLM Planner]
+    B --> C[Draft Revocation Action]
+    C --> D[Persistent SQLite Queue]
+    D --> E{2FA Approval}
+    E -->|Approved| F[Executor]
+    F --> G[On-Chain Revocation Tx]
+```
+*Note: Our live deployment requires Cryptographic 2FA. In autonomous mode, the orchestrator auto-approves.*
+
+**Live Revocation Evidence:** [View on Sepolia Etherscan](https://sepolia.etherscan.io/tx/0x6d65b50dfec531e53bd872553f25dddc1c50b9d40a6457b70feb9b3aba0799af)
+
+
 ## Eval status (honest)
 
 **What the harness measures.** eval/harness.py fetches each case's real transaction from chain over JSON-RPC and runs the full pipeline -- decode -> effects -> features -> policy engine -> verdict -- recording per-case timings. Cases that cannot be fetched are marked **unrunnable** and excluded from accuracy. No mock data, ever.
 
 **Current state: 90.2% decisive accuracy.** We achieved 90.2% decisive accuracy (and 61.8% overall accuracy, with 118 uncertain cases) on 374 real-world cases. This was achieved via:
 
-1. **sim.large_value_transfer**: A pure value-movement heuristic that aggregates both native ETH (	x.value and 
-ative_transfer effects) and ERC20 token transfers, calculating real-time USD equivalent via CoinGecko. Transactions moving more than $10M strictly trigger a +2500 weight (ELEVATED).
+1. **sim.large_value_transfer**: A pure value-movement heuristic that aggregates both native ETH (`tx.value` and `native_transfer` effects) and ERC20 token transfers, calculating real-time USD equivalent via CoinGecko. Transactions moving more than $10M strictly trigger a +2500 weight (ELEVATED).
 2. **intel.label_malicious**: A deterministic threat-intel check against a highly curated eval/intel/attacker_addresses.json (51 addresses), which now formally tracks verified compromised signers and primary attackers for major historic exploits like the Wormhole Hack, the  WazirX Hack, the  Wintermute Hack, and the  Horizon Bridge Hack.
 
 **Reproduce:**
@@ -67,3 +84,34 @@ cannot see.
 - **Risk Thresholds**: We tuned the risk bands downward to catch 96.5% of malicious attacks (110/114), willingly trading off some precision (21 false positives) because in a defense context, missing an attack is fatal, while a false positive just queues a manual analyst review. See [eval/ERRORS.md](eval/ERRORS.md) for the complete ledger of all 25 decisive errors.
 - **Benign Labels**: Our 260 benign transactions were selected from random blocks. They are labeled 'assumed benign' because they were not reported in any major incident databases (absence of evidence).
 - **Feature Tuning**: Any feature tuning requires strict evaluation against the benign dataset to ensure we don't block legitimate MEV or complex DeFi routing.
+
+## How to Verify Any Verdict On-Chain
+Every single deterministic verdict produced by AEGIS is cryptographically hashed and permanently anchored to the Sepolia blockchain via our AegisAttestor smart contract.
+
+A judge or auditor can independently verify that our local state has not been tampered with:
+
+**Option 1: Using the UI**
+1. Run the frontend and backend.
+2. Search for any intercepted transaction hash.
+3. Click the **VERIFY ON-CHAIN** button in the Results Panel.
+4. The system will independently fetch the on-chain hash from Sepolia and compare it with the local payload hash.
+
+**Option 2: Using the CLI**
+Run the verification script directly from your terminal:
+```bash
+python verify/verify_attestation.py <tx_hash> path/to/local_result.json
+```
+
+## Live Mempool Firehose
+AEGIS doesn't just scan static transactions; it can actively hook into the live mempool to intercept pending transactions before they are mined.
+
+To watch the live Sepolia mempool:
+1. Ensure your .env contains `WATCH_SEPOLIA=1`.
+2. Run the firehose script:
+```bash
+python scripts/firehose.py
+```
+This will connect to the Alchemy WebSocket and stream pending transaction hashes in real time.
+
+## Acknowledgments
+We heavily utilized **Wispr Flow** during the production and ideation of this project. Its seamless voice-to-text integration radically accelerated our workflow, from dictating complex architectural plans to rapidly writing robust prompt structures.

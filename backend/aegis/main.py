@@ -51,7 +51,26 @@ async def get_case(case_id: str):
         explanation="Not found in dataset."
     )
 
+from pydantic import BaseModel
 from aegis.models.ask import AskRequest, AskResponse
+
+
+
+from typing import Optional
+
+class VerifyResponse(BaseModel):
+    verified: bool
+    on_chain_hash: Optional[str] = None
+    local_hash: Optional[str] = None
+    error: Optional[str] = None
+
+
+@app.post("/api/v1/cases/{case_id}/verify", response_model=VerifyResponse)
+async def verify_case(case_id: str, req: AskRequest):
+    # We reuse AskRequest since it conveniently contains context which has the local_result
+    from aegis.attest.verify import verify_attestation
+    res = verify_attestation(case_id, req.context)
+    return VerifyResponse(**res)
 
 @app.post("/api/v1/cases/{case_id}/ask", response_model=AskResponse)
 async def ask_case(case_id: str, req: AskRequest):

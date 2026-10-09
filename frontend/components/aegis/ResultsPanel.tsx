@@ -9,6 +9,7 @@ import { useEffect, useState } from "react"
 
 export default function ResultsPanel({ result, loading }: { result: ScanResult|null, loading:boolean }) {
   const [aiResponse, setAiResponse] = useState("");
+    const [errorMsg, setErrorMsg] = useState("");
   useEffect(()=>{
     const c=!result ? "rgba(212,175,55,0.06)" : result.verdict==="malicious"?"rgba(255,26,94,0.10)": result.verdict==="uncertain"?"rgba(212,175,55,0.10)":"rgba(16,185,129,0.08)"
     document.documentElement.style.setProperty("--cursor-color", c)
@@ -44,8 +45,69 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
       <div className="p-4 md:p-5 space-y-5">
         <VerdictMonolith verdict={result.verdict} confidence={result.confidence} />
         <LiquidMeter value={result.confidence} />
-        <ReasonTimeline items={result.reasons} /><div className="h-[1px] bg-line" />
-        <EvidenceScroll payload={result.payload} signature={result.signature} anchorTx={result.anchor_tx} />
+                <ReasonTimeline items={result.reasons} /><div className="h-[1px] bg-line" />
+        
+        {/* Fund Trace Block */}
+        {result.trace && result.trace.length > 0 && (
+          <div className="mt-4 p-3 rounded bg-inset border border-line">
+            <div className="mono text-[11px] tracking-[0.16em] text-brass mb-2">MULTI-HOP FUND TRACE</div>
+            {result.trace.map((tr: any, i: number) => (
+              <div key={i} className="mono text-[12.5px] leading-5 text-cream/90 flex flex-col gap-1">
+                <div className="text-sage">Path: <span className="text-cream">{tr.path}</span></div>
+                <div className="text-sage flex gap-4">
+                  <span>Hops: <span className="text-cream">{tr.hops}</span></span>
+                  <span>Amount: <span className="text-cream">\</span></span>
+                  <span>Confidence: <span className="text-cream">{tr.confidence}</span></span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+        
+                <EvidenceScroll payload={result.payload} signature={result.signature} anchorTx={result.anchor_tx} />
+        
+        {/* Verification Block */}
+        <div className="mt-4 p-3 rounded bg-inset border border-line">
+            <div className="flex justify-between items-center mb-2">
+                <div className="mono text-[11px] tracking-[0.16em] text-brass">CRYPTOGRAPHIC VERIFICATION</div>
+                <button 
+                  onClick={async () => {
+                    const btn = document.getElementById("verify-btn") as HTMLButtonElement;
+                    btn.innerText = "Verifying on Sepolia...";
+                    btn.disabled = true;
+                    try {
+                      const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+                      const res = await fetch(backend + "/api/v1/cases/" + result.tx_hash + "/verify", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({ question: "verify", context: result })
+                      });
+                      const data = await res.json();
+                      const out = document.getElementById("verify-output");
+                      if(out) {
+                        if(data.verified) {
+                            out.innerHTML = "<span class='text-[#10b981]'>? VERIFIED</span><br/>Local Hash: " + data.local_hash + "<br/>On-Chain Hash: " + data.on_chain_hash;
+                        } else {
+                            out.innerHTML = "<span class='text-[#ff1a5e]'>? UNVERIFIED</span><br/>" + (data.error || "Hash mismatch.");
+                        }
+                      }
+                    } catch(e) {
+                      const out = document.getElementById("verify-output");
+                      if(out) out.innerHTML = "<span class='text-[#ff1a5e]'>Error connecting to backend.</span>";
+                    } finally {
+                      btn.innerText = "VERIFY ON-CHAIN";
+                      btn.disabled = false;
+                    }
+                  }}
+                  id="verify-btn"
+                  className="mono text-[10px] bg-line text-cream hover:text-brass px-2 py-1 rounded"
+                >VERIFY ON-CHAIN</button>
+            </div>
+            <div id="verify-output" className="mono text-[11px] text-sage break-words">
+                Click verify to fetch the attestation from the AegisAttestor smart contract on Sepolia.
+            </div>
+        </div>
+
 
         {/* AI Analysis Block */}
         <div className="mt-4 p-3 rounded bg-inset border border-line">
@@ -70,11 +132,12 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                   const input = e.currentTarget;
                   const q = input.value;
                   if(!q) return;
+                  setErrorMsg("");
                   input.value = "Analyzing context...";
                   input.disabled = true;
                   try {
                      const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
-                     const res = await fetch(backend + "/api/v1/cases/" + result.payload.case_id + "/ask", {
+                     const res = await fetch(backend + "/api/v1/cases/" + result.tx_hash + "/ask", {
                        method: "POST",
                        headers: {"Content-Type": "application/json"},
                        body: JSON.stringify({ question: q, context: result })
@@ -98,7 +161,7 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                      const u = new SpeechSynthesisUtterance(spokenText);
                      window.speechSynthesis.speak(u);
                   } catch(err) {
-                     alert("Error connecting to Aegis NLP API at localhost:8000. Is the backend running?");
+                     setErrorMsg("Error connecting to Aegis NLP API. Is the backend running?");
                   } finally {
                      input.value = "";
                      input.disabled = false;
@@ -110,7 +173,7 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
               className="h-9 px-3 bg-panel border border-line rounded mono text-xs text-sage hover:text-cream"
               onClick={() => {
                 const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-                if (!SpeechRecognition) return alert("Speech recognition not supported in this browser.");
+                if (!SpeechRecognition) return setErrorMsg("Speech recognition not supported in this browser.");
                 const recognition = new SpeechRecognition();
                 recognition.onresult = async (event: any) => {
                     const transcript = event.results[0][0].transcript;
@@ -120,11 +183,12 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                         // Execute the same logic manually since dispatchEvent fails React's synthetic system
                         const q = transcript;
                         if(!q) return;
-                        input.value = "Analyzing context...";
+                        setErrorMsg("");
+                  input.value = "Analyzing context...";
                         input.disabled = true;
                         try {
                            const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
-                           const res = await fetch(backend + "/api/v1/cases/" + result.payload.case_id + "/ask", {
+                           const res = await fetch(backend + "/api/v1/cases/" + result.tx_hash + "/ask", {
                              method: "POST",
                              headers: {"Content-Type": "application/json"},
                              body: JSON.stringify({ question: q, context: result })
@@ -147,7 +211,7 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                            const u = new SpeechSynthesisUtterance(spokenText);
                            window.speechSynthesis.speak(u);
                         } catch(err) {
-                           alert("Error connecting to Aegis NLP API at localhost:8000. Is the backend running?");
+                           setErrorMsg("Error connecting to Aegis NLP API. Is the backend running?");
                         } finally {
                            input.value = "";
                            input.disabled = false;
@@ -161,6 +225,11 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
             {aiResponse && (
                 <div className="mt-3 p-3 bg-panel border border-line rounded mono text-xs text-cream/90 whitespace-pre-wrap break-words overflow-hidden">
                     {aiResponse}
+                </div>
+            )}
+            {errorMsg && (
+                <div className="mt-3 p-3 bg-panel border border-[rgba(255,26,94,0.4)] rounded mono text-xs text-[#ff1a5e] whitespace-pre-wrap break-words">
+                    {errorMsg}
                 </div>
             )}
         </div>

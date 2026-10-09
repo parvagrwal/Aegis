@@ -16,6 +16,7 @@ class Executor:
         if item["status"] != "approved":
             raise PermissionError(f"Action cannot be executed. Status: {item['status']}")
             
+        tx_hash = None
         # Agentic Action Execution
         action = item.get("action", {})
         if action.get("type") == "REVOKE_APPROVAL":
@@ -23,7 +24,8 @@ class Executor:
             token = action.get("token")
             chain_id = action.get("chain_id", 1)
             if spender and token:
-                revoke_approval("defender", chain_id, token, spender)
+                res = revoke_approval("defender", chain_id, token, spender)
+                tx_hash = res.get("tx_hash")
                 
-        item["status"] = "executed"
-        return {"success": True}
+        self.queue.set_status(action_id, "executed", tx_hash)
+        return {"success": True, "tx_hash": tx_hash}

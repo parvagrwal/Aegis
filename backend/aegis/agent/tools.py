@@ -3,7 +3,7 @@ import httpx
 from eth_account import Account
 from eth_abi import encode
 from aegis.agent.permissions import check_permission
-from web3 import Web3
+from eth_utils import to_checksum_address
 
 class ToolError(Exception):
     pass
@@ -19,8 +19,8 @@ def revoke_approval(role: str, chain_id: int, token: str, spender: str):
     acct = Account.from_key(pk)
     
     try:
-        spender_addr = Web3.to_checksum_address(spender)
-        token_addr = Web3.to_checksum_address(token)
+        spender_addr = to_checksum_address(spender)
+        token_addr = to_checksum_address(token)
     except Exception:
         raise ToolError("Invalid addresses provided")
         

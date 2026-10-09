@@ -1,30 +1,53 @@
 import asyncio
-import time
+from aegis.agent.planner import plan
+from aegis.defend.executor import Executor
+from aegis.defend.queue import DefendQueue
+from aegis.agent.memory import Memory
+import uuid
 
 class Orchestrator:
-    def __init__(self, timeout_s=4.1):
+    def __init__(self, timeout_s=10.0):
         self.timeout_s = timeout_s
+        self.queue = DefendQueue()
+        self.executor = Executor(self.queue)
+        self.memory = Memory()
         
-    async def run(self, planner_task) -> dict:
-        start_time = time.time()
+    async def run(self, event_context: dict) -> dict:
+        attempt = 0
+        max_attempts = 2
+        done = False
+        final_result = {"status": "success", "executed_actions": []}
         
-        # We start the planner task
-        task = asyncio.create_task(planner_task())
-        
-        try:
-            # Wait for the planner to finish or timeout
-            res = await asyncio.wait_for(asyncio.shield(task), timeout=self.timeout_s)
-            res["version"] = "v2"
-            return res
-        except asyncio.TimeoutError:
-            # The planner took too long, return v1 immediately.
-            # The planner task continues running in the background.
-            def background_cb(t):
+        while not done and attempt < max_attempts:
+            # Perceive
+            observation = event_context
+            
+            # Plan
+            plan_result = await plan(observation)
+            actions = plan_result.get("actions", [])
+            
+            if not actions:
+                done = True
+                break
+                
+            # Act
+            for action in actions:
+                action_id = str(uuid.uuid4())
+                self.queue.add(action_id, action)
+                self.queue.set_status(action_id, "approved")
+                
                 try:
-                    res = t.result()
-                    # In a real system, we'd emit v2 event here.
-                    res["version"] = "v2"
-                except Exception:
-                    pass
-            task.add_done_callback(background_cb)
-            return {"status": "decided", "version": "v1"}
+                    res = self.executor.execute(action_id)
+                    final_result["executed_actions"].append(action)
+                    
+                    # Remember
+                    self.memory.add_anchor(event_context.get("tx_hash", "unknown"), {"action": action, "result": res})
+                    
+                    if res.get("success"):
+                        done = True
+                except Exception as e:
+                    print(f"Executor failed: {e}")
+                    
+            attempt += 1
+            
+        return final_result

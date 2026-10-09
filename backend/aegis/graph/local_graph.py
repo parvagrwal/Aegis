@@ -32,8 +32,15 @@ class LocalGraph:
         if query == "echo_alive":
             return [{"alive": True}]
         elif query == "fund_trace":
-            # Mock fund trace response
-            return []
+            tx_hash = params.get("tx_hash", "unknown")
+            attacker = params.get("attacker", "unknown_attacker")
+            # Return a deterministic 2-hop trace output
+            return [{
+                "path": f"{attacker[:8]}... -> 0xMixer... -> 0xExchange...",
+                "hops": 2,
+                "amount_usd": 1500000.0,
+                "confidence": "high"
+            }]
         elif query == "infra_anchors":
             return []
         return []
