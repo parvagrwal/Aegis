@@ -1,0 +1,92 @@
+{
+  "version": "policy.v1",
+  "prior_logit_milli": -500,
+  "calibration": {
+    "temperature": 1.0,
+    "status": "unfitted",
+    "method": "temperature scaling: p = sigmoid(score_milli/1000/T)",
+    "fitted_on": null,
+    "fitted_at": null,
+    "n_train": 0,
+    "n_holdout": 0,
+    "train_nll": null,
+    "holdout_nll": null,
+    "note": "No calibration fit has been run. The previous temperature=1.05 was a hardcoded mock. Run: python backend/aegis/policy/calibration.py --data <pairs.jsonl> with at least 20 labeled samples."
+  },
+  "bands": {
+    "risk": {
+      "ELEVATED": 2000,
+      "HIGH": 5000,
+      "CRITICAL": 8500
+    },
+    "confidence": {
+      "MEDIUM": 7000,
+      "HIGH": 9000
+    }
+  },
+  "sufficiency": {
+    "min_coverage_bps": 7000,
+    "min_abs_logit_milli": 1000,
+    "conflict_family_milli": 1500,
+    "conflict_factor_bps": 7500
+  },
+  "features": {
+    "sim.approval_unlimited_to_eoa": {
+      "weight_milli": 2500,
+      "label": "Unlimited token approval to a wallet (EOA)",
+      "explain_template": "This grants {beneficiary} unlimited permission to spend your {token}."
+    },
+    "code.sweeper_pattern": {
+      "weight_milli": 3000,
+      "label": "Sweeper detected",
+      "explain_template": "Sweeper"
+    },
+    "intel.label_malicious": {
+      "weight_milli": 2500,
+      "label": "Malicious intel",
+      "explain_template": "Malicious list"
+    }
+  },
+  "coverage_requirements": {
+    "APPROVAL": {
+      "decode": 1,
+      "effects": 2,
+      "beneficiary_profile": 2,
+      "labels": 1,
+      "graph_infra": 1,
+      "memory": 1
+    }
+  },
+  "triage_points": {
+    "type4_unknown_delegate": 40,
+    "unlimited_approve_unknown": 35,
+    "approval_all_unknown": 35,
+    "zero_value_transfer_from": 30,
+    "permit_third_party": 40,
+    "bait_selector_payable": 30,
+    "label_hit": 60
+  },
+  "rules": [
+    {
+      "id": "R01",
+      "context": "FIREHOSE",
+      "risk_min": "CRITICAL",
+      "conf_min": "MEDIUM",
+      "sufficient": null,
+      "effect": null,
+      "actions": [
+        "ADD_TO_WATCH",
+        "ALERT_ANALYST"
+      ],
+      "text": "Unprotected traffic, critical risk: watch and alert."
+    }
+  ],
+  "actions": {
+    "QUEUE_REVOCATION": {
+      "impact": "L2",
+      "approval": "analyst_confirm",
+      "friction": 6,
+      "expires_ms": 600000
+    }
+  }
+}

@@ -1,0 +1,313 @@
+[
+  {
+    "address": "0x56d8b635a7c88fd1104d23d632af40c1c3aac4e3",
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "provenance": "Attacker address from Nomad Bridge Hack (Nomad Bridge Exploiter 1)"
+  },
+  {
+    "address": "0xb5c55f76f90cc528b2609109ca14d8d84593590e",
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "provenance": "Attacker address from Nomad Bridge Hack ()\n- Copycat exploiter addresses source: https://rekt.news/nomad-rekt\n- Note: alleged first attacker Alexander Gurevich was arrested May 2025, but his wallet address was never published in accessible sources \u2014 deliberately omitted.\n\n---\n\n## 5. Ronin Bridge Hack \u2014 2022-03-23 (~$625M)\n\n- **Type:** `bridge_exploit` (validator private-key compromise)\n- **Chain:** Ethereum mainnet (Ronin is an Ethereum sidechain; withdrawals settled on mainnet)\n- **Attribution:** Lazarus Group / APT38 (FBI, OFAC-sanctioned)\n- **Attacker addresses:**\n  - `0x098B716B8Aaf21512996dC57EB0615e2383E2f96` (main)\n  - `0xa0e1c89Ef1a489c9C7dE96311eD5Ce5D32c20E4B`\n  - `0x53b6936513e738f44FB50d2b9476730C0Ab3Bfc1`\n  - `0x08723392Ed15743cc38513C4925f5e6be5c17243`\n\n| # | Transaction hash | Note | Source |\n|---|---|---|---|\n| 1 | `0xc28fad5e8d5e0ce6a2eaf67b6687be5d58113e16be590824d6cfa1a94467d0b7` | 173,600 ETH withdrawal (initial exploit) | https://slowmist.medium.com/ronin-exploit-largest-crypto-hack-to-date-8b7c581e38fd |\n| 2 | `0xed2c72ef1a552ddaec6dd1f5cddf0b59a8f37f82bdda5257d9c7c37db7bb9b08` | 25.5M USDC withdrawal (initial exploit) | https://slowmist.medium.com/ronin-exploit-largest-crypto-hack-to-date-8b7c581e38fd |\n\n---\n\n## 6. Horizon Bridge Hack (Harmony) \u2014 2022-06-23 (~$100M)\n\n- **Type:** `bridge_exploit` (multisig private-key compromise)\n- **Chain:** Ethereum mainnet (one tx on BSC, flagged)\n- **Attribution:** Lazarus Group / APT38 (Elliptic; FBI)\n- **Attacker addresses (Etherscan-labeled)"
+  },
+  {
+    "address": "0x036cec1a199234fc02f72d29e596a09440825f1c",
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "provenance": "Attacker address from Euler Finance Hack ()\n- `0x5f259d0b76665c337c6104145894f4d1d2758b8c` (attacker EOA)\n\n**Additional attack txs** (exploit iterations across WBTC/USDC/stETH pools, blocks 16818013\u201316818085, Mar 13 2023; source: Etherscan-labeled address pages, https://etherscan.io/address/0x036cec1a199234fc02f72d29e596a09440825f1c):\n- `0x62bd3d31a7b75c098ccf28bc4d4af8c4a191b4b9e451fab4232258079e8b18c4` (stETH pool iteration, 73,347.66 ETH internal transfer)\n- `0x71a908be0bef6174bccc3d493becdfd28395d78898e355d451cb52f7bac38617` (11,559.13 ETH, block 16818057)\n- `0x47ac3527d02e6b9631c77fad1cdee7bfa77a8a7bfd4880dccbda5146ace4088f` (block 16818024)\n- `0xa476fad72c8f4ee15fd2d75ecda4701d8f3ac74431aa453521f13a01c8688142` (block 16818013)\n- `0x3097830e9921e4063d334acb82f6a79374f76f0b1a8f857e89b89bc58df1f311` (stETH, 3,845.91 ETH, block 16818085)\n\n---\n\n## 3. Wormhole Bridge Hack \u2014 2022-02-02 (~$321M)\n\n- **Type:** `bridge_exploit`\n- **Chain:** Solana (core exploit) + Ethereum mainnet (withdrawals below)\n- **Exploiter:** `0x629e7da20197a5429d30da36e77d06cdf796b71a`\n\n| # | Transaction hash | Note | Source |\n|---|---|---|---|\n| 1 | `0xd31b155e259a403ebe69831fae0ec2b4bd33dfa090c43b605a57d5c72c4fbbc7` | Exploit tx | https://medium.com/breadcrumbsapp/wormhole-exploit-an-analysis-b966effc36f2 |\n| 2 | `0x24c7d855a0a931561e412d809e2596c3fd861cc7385566fd1cb528f9e93e5f14` | Exploit tx | https://medium.com/breadcrumbsapp/wormhole-exploit-an-analysis-b966effc36f2 |\n| 3 | `0x4d5201dd4a377f20e61fb8f42e6f929ec16bcec918f0584e39241d15b254a80f` | Exploit tx | https://medium.com/breadcrumbsapp/wormhole-exploit-an-analysis-b966effc36f2 |\n\n---\n\n## 4. Curve Finance Vyper Reentrancy \u2014 2023-07-30 (~$73M)\n\n- **Type:** `reentrancy`\n- **Chain:** Ethereum mainnet\n\n**pETH/ETH pool attack**\n- Attacker: `0x6ec21d1868743a44318c3c259a6d4953f9978538`\n- Attack contract: `0x466b85b49ec0c5c1eb402d5ea3c4b88864ea0f04`\n- Attack tx: `0xa84aa065ce61dbb1eb50ab6ae67fc31a9da50dd2c74eefd561661bfce2f1620c`\n\n**CRV/ETH pool attack**\n- Attacker: `0xb752def3a1fded45d6c4b9f4a8f18e645b41b324`\n- Attack contract: `0x83e056ba00beae4d8aa83deb326a90a4e100d0c1`\n- Attack tx: `0x2e7dc8b2fb7e25fd00ed9565dcc0ad4546363171d5e00f196d48103983ae477c`\n\n- Source: https://github.com/kismp123/defi-security-incident/blob/HEAD/2023/2023-07-30_Curve_VyperReentrancy_ETH.md\n\n---\n\n## 5+. (All research tracks complete \u2014 drainer-kit findings in incidents 13\u201317 below)\n\n---\n\n## 13. Monkey Drainer Phishing Operation \u2014 2022-09 to 2023-03 (~$13M)\n\n- **Type:** `drainer_kit` (ice-phishing via fake NFT mint sites)\n- **Chain:** Ethereum mainnet\n- **Attacker addresses** (published by ZachXBT):\n  - `0x9FC8265F2b376084423A1A348a89Ecd894a9d106`\n  - `0x84527B5949D479c879b8Dd71cd8f79048CdF6fB8`\n  - `monkey-drainer.eth` (ENS)\n\nThe following 10 txs are real incoming drain transactions to the drainer wallets, individually verified on-chain (dates match ZachXBT's reporting window):\n\n1. `0xbcab88108f001baa28cb50d8eaefe731dc52406bf7aa172b1b067d4085c287e5` (2022-10-26)\n2. `0xc06c8c20f1fcb41c659b52e5a5811f51020a3a67761848731e2ff4ad50d137f0` (2022-10-25)\n3. `0x534d3ddcb310a418f5e9bb03a665aeb2e4165017cf9daa25627488c7abf4f74c` (2022-10-24)\n4. `0x58149e2a3bbe3796ac757b596e2ed49acd81d04f6f22c7da38608edb5667bca4` (2022-10-21)\n5. `0x5904e495c8cfadc5ec4cf46d5c66f766247d0eb72eaf84b9781fe9e92dc52c4f` (2022-10-19)\n6. `0x330a37fbcb2076bf2a1284d2885046b9229ee588b629f7448363726d198401b4` (2023-02-28)\n7. `0x5385c8e48b9059fd88a6620ddb1d7d63320f10bbd530c4add08fa4e6423bba83` (2023-02-28)\n8. `0x2cd8af31cff096f92e2d8bfb348c47f109283413e857e7cac800617543b9de69` (2023-02-27)\n9. `0xd6799eda08a403d5e86f0e5974a7afb13f4a3927499da4da8d90f094c75d1e56` (2023-02-27)\n10. `0x12e64fae790939de91f3e58cb53a1ef0257a01845ea23f75acc31d484f816d75` (2023-02-27)\n\n- Sources: https://omniatech.io/pages/phishing-scammer-steals-1m-in-eth-and-nfts-in-a-day-remains-active/ \u00b7 https://cointelegraph.com/news/notorious-monkey-drainer-crypto-scammer-says-they-re-shutting-down\n- Caveat: per-victim drain txs are not published as lists in articles; these are the drainer wallets' verified incoming drain txs.\n\n---\n\n## 14. FTX Drainer \u2014 2022-11-11 (~$477M moved)\n\n- **Type:** `exchange_hack`\n- **Chain:** Ethereum mainnet\n- **Attacker address:** `0x59ABf3837Fa962d6853b4Cc0a19513AA031fd32b` (Etherscan label)"
+  },
+  {
+    "address": "0xe74b28c2eae8679e3ccc3a94d5d0de83ccb84705",
+    "label": "malicious",
+    "incident": "Wintermute Hack",
+    "provenance": "Attacker address from Wintermute Hack (Wintermute Exploiter)"
+  },
+  {
+    "address": "0x0248f752802b2cfb4373cc0c3bc3964429385c26",
+    "label": "malicious",
+    "incident": "Wintermute Hack",
+    "provenance": "Attacker address from Wintermute Hack (WintermuteExploiterPair)"
+  },
+  {
+    "address": "0x1c5dcdd006ea78a7e4783f9e6021c32935a10fb4",
+    "label": "malicious",
+    "incident": "Beanstalk Farms Hack",
+    "provenance": "Attacker address from Beanstalk Farms Hack (Beanstalk Flashloan Exploiter)"
+  },
+  {
+    "address": "0x1fcdb04d0c5364fbd92c73ca8af9baa72c269107",
+    "label": "malicious",
+    "incident": "BadgerDAO Hack",
+    "provenance": "Attacker address from BadgerDAO Hack (BadgerDAO Exploiter)"
+  },
+  {
+    "address": "0x70747df6ac244979a2ae9ca1e1a82899d02bbea4",
+    "label": "malicious",
+    "incident": "Cream Finance Hack",
+    "provenance": "Attacker address from Cream Finance Hack (Cream Finance Exploiter)"
+  },
+  {
+    "address": "0xb66cd966670d962c227b3eaba30a872dbfb995db",
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "provenance": "Attacker address from Euler Finance Hack (main exploiter)"
+  },
+  {
+    "address": "0xebc29199c817dc47ba12e3f86102564d640cbf99",
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "provenance": "Attacker address from Euler Finance Hack (\"Euler Exploit Contract 1\")"
+  },
+  {
+    "address": "0x5f259d0b76665c337c6104145894f4d1d2758b8c",
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "provenance": "Attacker address from Euler Finance Hack (attacker EOA)"
+  },
+  {
+    "address": "0x0fa09c3a328792253f8dee7116848723b72a6d2e",
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "provenance": "Attacker address from Bybit Hack (initial attack initiator)"
+  },
+  {
+    "address": "0x6ec21d1868743a44318c3c259a6d4953f9978538",
+    "label": "malicious",
+    "incident": "Curve Finance Vyper Reentrancy",
+    "provenance": "Attacker address from Curve Finance Vyper Reentrancy"
+  },
+  {
+    "address": "0xb752def3a1fded45d6c4b9f4a8f18e645b41b324",
+    "label": "malicious",
+    "incident": "Curve Finance Vyper Reentrancy",
+    "provenance": "Attacker address from Curve Finance Vyper Reentrancy"
+  },
+  {
+    "address": "0xbf293d5138a2a1ba407b43672643434c43827179",
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "provenance": "Attacker address from Nomad Bridge Hack"
+  },
+  {
+    "address": "0x098b716b8aaf21512996dc57eb0615e2383e2f96",
+    "label": "malicious",
+    "incident": "Ronin Bridge Hack",
+    "provenance": "Attacker address from Ronin Bridge Hack"
+  },
+  {
+    "address": "0xa0e1c89ef1a489c9c7de96311ed5ce5d32c20e4b",
+    "label": "malicious",
+    "incident": "Ronin Bridge Hack",
+    "provenance": "Attacker address from Ronin Bridge Hack"
+  },
+  {
+    "address": "0x53b6936513e738f44fb50d2b9476730c0ab3bfc1",
+    "label": "malicious",
+    "incident": "Ronin Bridge Hack",
+    "provenance": "Attacker address from Ronin Bridge Hack"
+  },
+  {
+    "address": "0x08723392ed15743cc38513c4925f5e6be5c17243",
+    "label": "malicious",
+    "incident": "Ronin Bridge Hack",
+    "provenance": "Attacker address from Ronin Bridge Hack"
+  },
+  {
+    "address": "0x0d043128146654c7683fbf30ac98d7b2285ded00",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0x9e91ae672e7f7330fc6b9bab9c259bd94cd08715",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0x58f4baccb411acef70a5f6dd174af7854fc48fa9",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0x1ec6f83b55c3f4cefc630442716872ba15f16430",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0x432a9cb4353bed67ec5351734d4a44c0826847ae",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0x4507ac1bdf4ae5e61ffcec3a9aeda312e2505970",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0x8a0858888beeb5d1435ecd3657831699f169c3f4",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0x809dc735e80be1578ad4fe04a30aa6b7e280c5e4",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0x89f89d61644c6e606efb25a01210159f102fbd8b",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0x40efc580e5cb5701797a762990d9e690108dadfd",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0x20dbccd46eef96a1b78383cf0d26bb575ec00201",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0x752023bcdd7672755a04e36e2c9770944e9b3ccf",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "provenance": "Attacker address from Horizon Bridge Hack (Harmony)"
+  },
+  {
+    "address": "0xc8a65fadf0e0ddaf421f28feab69bf6e2e589963",
+    "label": "malicious",
+    "incident": "Poly Network Hack",
+    "provenance": "Attacker address from Poly Network Hack"
+  },
+  {
+    "address": "0x0d6e286a7cfd25e0c01fee9756765d8033b32c71",
+    "label": "malicious",
+    "incident": "Poly Network Hack",
+    "provenance": "Attacker address from Poly Network Hack"
+  },
+  {
+    "address": "0x5dc3603c9d42ff184153a8a9094a73d461663214",
+    "label": "malicious",
+    "incident": "Poly Network Hack",
+    "provenance": "Attacker address from Poly Network Hack"
+  },
+  {
+    "address": "0xb2698c2d99ad2c302a95a8db26b08d17a77cedd4",
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "provenance": "Attacker address from Euler Finance Hack"
+  },
+  {
+    "address": "0x9fc8265f2b376084423a1a348a89ecd894a9d106",
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "provenance": "Attacker address from Monkey Drainer Phishing Operation"
+  },
+  {
+    "address": "0x84527b5949d479c879b8dd71cd8f79048cdf6fb8",
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "provenance": "Attacker address from Monkey Drainer Phishing Operation"
+  },
+  {
+    "address": "0x47666fab8bd0ac7003bce3f5c3585383f09486e2",
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "provenance": "Attacker address from Bybit Hack"
+  },
+  {
+    "address": "0xdd90071d52f20e85c89802e5dc1ec0a7b6475f92",
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "provenance": "Attacker address from Bybit Hack"
+  },
+  {
+    "address": "0xe8b36709dd86893bf7bb78a7f9746b826f0e8c84",
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "provenance": "Attacker address from Bybit Hack"
+  },
+  {
+    "address": "0xa4b2fd68593b6f34e51cb9edb66e71c1b4ab449e",
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "provenance": "Attacker address from Bybit Hack"
+  },
+  {
+    "address": "0x1542368a03ad1f03d96d51b414f4738961cf4443",
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "provenance": "Attacker address from Bybit Hack"
+  },
+  {
+    "address": "0x36ed3c0213565530c35115d93a80f9c04d94e4cb",
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "provenance": "Attacker address from Bybit Hack"
+  },
+  {
+    "address": "0x259a2795624b8a17bc7eb312a94504ad0f615d1e",
+    "label": "malicious",
+    "incident": "Beanstalk Farms Hack",
+    "provenance": "Attacker address from Beanstalk Farms Hack"
+  },
+  {
+    "address": "0xe5ecf73603d98a0128f05ed30506ac7a663dbb69",
+    "label": "malicious",
+    "incident": "Beanstalk Farms Hack",
+    "provenance": "Attacker address from Beanstalk Farms Hack"
+  },
+  {
+    "address": "0x24354d31bc9d90f62fe5f2454709c32049cf866b",
+    "label": "malicious",
+    "incident": "Cream Finance Hack",
+    "provenance": "Attacker address from Cream Finance Hack"
+  },
+  {
+    "address": "0x812d8622c6f3c45959439e7ede3c580da06f8f25",
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack",
+    "attack_type": "bridge_exploit",
+    "provenance": "Compromised multisig signer controlled by Lazarus Group. Documented by Elliptic and Rekt News."
+  },
+  {
+    "address": "0x629e7da20197a5429d30da36e77d06cdf796b71a",
+    "label": "malicious",
+    "incident": "Wormhole Bridge Hack",
+    "attack_type": "bridge_exploit",
+    "provenance": "Primary exploiter wallet that minted 120,000 wETH (). Documented by Chainalysis, CertiK, Halborn."
+  },
+  {
+    "address": "0xd967113224c354600b3151e27aaba53e3034f372",
+    "label": "malicious",
+    "incident": "WazirX Hack",
+    "attack_type": "exchange_hack",
+    "provenance": "Compromised Gnosis Safe owner/signer used for malicious delegatecall upgrade. Documented by security analysts."
+  },
+  {
+    "address": "0x04b21735e93fa3f8df70e2da89e6922616891a88",
+    "label": "malicious",
+    "incident": "WazirX Hack",
+    "attack_type": "exchange_hack",
+    "provenance": "Primary WazirX Exploiter destination for . Universally labeled on Etherscan."
+  },
+  {
+    "address": "0x5c47185e0c026151c978ff1e36c1309bd71da9c3",
+    "label": "malicious",
+    "incident": "Wintermute Hack",
+    "attack_type": "private_key",
+    "provenance": "Attacker that exploited Profanity vanity address vulnerability for . Publicly documented."
+  }
+]

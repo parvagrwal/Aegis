@@ -1,5 +1,7 @@
 import sys, os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from dotenv import load_dotenv
+load_dotenv()
 from fastapi import FastAPI
 from aegis.models.api import Health, CaseResponse
 
@@ -27,3 +29,6 @@ async def ask_case(case_id: str, req: AskRequest):
         answer=f"The answer to '{req.question}' is based on the record.",
         citations=["record.json:L10"]
     )
+# Live deterministic scan (real pipeline) — vault frontend
+from aegis.api.routes_scan import router as scan_router
+app.include_router(scan_router)

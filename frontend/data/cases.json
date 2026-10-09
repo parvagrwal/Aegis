@@ -1,0 +1,2848 @@
+[
+  {
+    "tx_hash": "0xa5ce309047a92177ad43c03f1f13a87339e38c89509cf5564d79775c4456cf92",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "bridge_exploit",
+    "label_provenance": "Nomad Bridge Hack; First attack tx; caveat: alleged first attacker Alexander Gurevich was arrested May 2025, but his wallet address was never published in accessible sources \u2014 deliberately omitted.; source: https://github.com/apegurus/solidity-argus/blob/HEAD/skills/case-studies/nomad-bridge/SKILL.md",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xed26708a7335116bdb0673f32ace7c2f329fe3cd349e200447210f1721f335f0",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "bridge_exploit",
+    "label_provenance": "Nomad Bridge Hack; Attacker sends 0.01 WBTC to bridge; caveat: alleged first attacker Alexander Gurevich was arrested May 2025, but his wallet address was never published in accessible sources \u2014 deliberately omitted.; source: https://github.com/adeshh/defi-hack-labs/blob/HEAD/docs/05-nomad2022.md",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa5fe9d044e4f3e5aa5bc4c0709333cd2190cba0f4e7f16bcf73f49f83e4a5460",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "bridge_exploit",
+    "label_provenance": "Nomad Bridge Hack; Bridge processes 100 WBTC to attacker; caveat: alleged first attacker Alexander Gurevich was arrested May 2025, but his wallet address was never published in accessible sources \u2014 deliberately omitted.; source: https://github.com/adeshh/defi-hack-labs/blob/HEAD/docs/05-nomad2022.md",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc28fad5e8d5e0ce6a2eaf67b6687be5d58113e16be590824d6cfa1a94467d0b7",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Ronin Bridge Hack",
+    "attack_type": "bridge_exploit",
+    "label_provenance": "Ronin Bridge Hack; 173,600 ETH withdrawal (initial exploit); source: https://slowmist.medium.com/ronin-exploit-largest-crypto-hack-to-date-8b7c581e38fd",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xed2c72ef1a552ddaec6dd1f5cddf0b59a8f37f82bdda5257d9c7c37db7bb9b08",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Ronin Bridge Hack",
+    "attack_type": "bridge_exploit",
+    "label_provenance": "Ronin Bridge Hack; 25.5M USDC withdrawal (initial exploit); source: https://slowmist.medium.com/ronin-exploit-largest-crypto-hack-to-date-8b7c581e38fd",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x27981c7289c372e601c9475e5b5466310be18ed10b59d1ac840145f6e7804c97",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "attack_type": "bridge_exploit",
+    "label_provenance": "Horizon Bridge Hack (Harmony); 13,100 ETH drained from Harmony ETH Bridge; source: Etherscan (Harmony: ETH Bridge \u2192 Horizon Bridge Exploiter); https://rekt.news/harmony-rekt/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x44256bb81181bcaf7b5662614c7ee5f6c30d14e1c8239f006f84864a9cda9f77",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "attack_type": "bridge_exploit",
+    "label_provenance": "Horizon Bridge Hack (Harmony); Drain tx linked by rekt.news; source: https://rekt.news/harmony-rekt/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2f259dec682ccd6517c09b771d6edb439f1925e87b562a72649a708fdd0511e1",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Horizon Bridge Hack (Harmony)",
+    "attack_type": "bridge_exploit",
+    "label_provenance": "Horizon Bridge Hack (Harmony); 18,036.3 ETH split to sub-exploiter; source: https://github.com/tayvano/lazarus-bluenoroff-research/blob/HEAD/hacks-and-thefts/harmony_horizon_bridge.md",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc310a0affe2169d1f6feec1c63dbc7f7c62a887fa48795d327d4d2da2d6b111d",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Euler Finance Hack; DAI-pool iteration of exploit; source: http://foreshock.tech/forensics-sample-report.pdf",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x62bd3d31a7b75c098ccf28bc4d4af8c4a191b4b9e451fab4232258079e8b18c4",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Euler Finance Hack; stETH pool iteration, 73,347.66 ETH internal transfer; sources: http://foreshock.tech/forensics-sample-report.pdf \u00b7 https://cointelegraph.com/news/euler-finance-hacked-for-over-195m-in-a-flash-loan-attack",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x71a908be0bef6174bccc3d493becdfd28395d78898e355d451cb52f7bac38617",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Euler Finance Hack; 11,559.13 ETH, block 16818057; sources: http://foreshock.tech/forensics-sample-report.pdf \u00b7 https://cointelegraph.com/news/euler-finance-hacked-for-over-195m-in-a-flash-loan-attack",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x47ac3527d02e6b9631c77fad1cdee7bfa77a8a7bfd4880dccbda5146ace4088f",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Euler Finance Hack; block 16818024; sources: http://foreshock.tech/forensics-sample-report.pdf \u00b7 https://cointelegraph.com/news/euler-finance-hacked-for-over-195m-in-a-flash-loan-attack",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa476fad72c8f4ee15fd2d75ecda4701d8f3ac74431aa453521f13a01c8688142",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Euler Finance Hack; block 16818013; sources: http://foreshock.tech/forensics-sample-report.pdf \u00b7 https://cointelegraph.com/news/euler-finance-hacked-for-over-195m-in-a-flash-loan-attack",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3097830e9921e4063d334acb82f6a79374f76f0b1a8f857e89b89bc58df1f311",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Euler Finance Hack; stETH, 3,845.91 ETH, block 16818085; sources: http://foreshock.tech/forensics-sample-report.pdf \u00b7 https://cointelegraph.com/news/euler-finance-hacked-for-over-195m-in-a-flash-loan-attack",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd31b155e259a403ebe69831fae0ec2b4bd33dfa090c43b605a57d5c72c4fbbc7",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Wormhole Bridge Hack",
+    "attack_type": "bridge_exploit",
+    "label_provenance": "Wormhole Bridge Hack; Exploit tx; source: https://medium.com/breadcrumbsapp/wormhole-exploit-an-analysis-b966effc36f2",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x24c7d855a0a931561e412d809e2596c3fd861cc7385566fd1cb528f9e93e5f14",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Wormhole Bridge Hack",
+    "attack_type": "bridge_exploit",
+    "label_provenance": "Wormhole Bridge Hack; Exploit tx; source: https://medium.com/breadcrumbsapp/wormhole-exploit-an-analysis-b966effc36f2",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4d5201dd4a377f20e61fb8f42e6f929ec16bcec918f0584e39241d15b254a80f",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Wormhole Bridge Hack",
+    "attack_type": "bridge_exploit",
+    "label_provenance": "Wormhole Bridge Hack; Exploit tx; source: https://medium.com/breadcrumbsapp/wormhole-exploit-an-analysis-b966effc36f2",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa84aa065ce61dbb1eb50ab6ae67fc31a9da50dd2c74eefd561661bfce2f1620c",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Curve Finance Vyper Reentrancy",
+    "attack_type": "reentrancy",
+    "label_provenance": "Curve Finance Vyper Reentrancy; Attack tx; sources: https://github.com/kismp123/defi-security-incident/blob/HEAD/2023/2023-07-30_Curve_VyperReentrancy_ETH.md",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2e7dc8b2fb7e25fd00ed9565dcc0ad4546363171d5e00f196d48103983ae477c",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Curve Finance Vyper Reentrancy",
+    "attack_type": "reentrancy",
+    "label_provenance": "Curve Finance Vyper Reentrancy; Attack tx; sources: https://github.com/kismp123/defi-security-incident/blob/HEAD/2023/2023-07-30_Curve_VyperReentrancy_ETH.md",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xbcab88108f001baa28cb50d8eaefe731dc52406bf7aa172b1b067d4085c287e5",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "attack_type": "drainer_kit",
+    "label_provenance": "Monkey Drainer Phishing Operation; 2022-10-26; caveat: per-victim drain txs are not published as lists in articles; these are the drainer wallets' verified incoming drain txs. real incoming drain transactions to the drainer wallets, individually verified on-chain (dates match ZachXBT's reporting window):; sources: https://omniatech.io/pages/phishing-scammer-steals-1m-in-eth-and-nfts-in-a-day-remains-active/ \u00b7 https://cointelegraph.com/news/notorious-monkey-drainer-crypto-scammer-says-they-re-shutting-down",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc06c8c20f1fcb41c659b52e5a5811f51020a3a67761848731e2ff4ad50d137f0",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "attack_type": "drainer_kit",
+    "label_provenance": "Monkey Drainer Phishing Operation; 2022-10-25; caveat: per-victim drain txs are not published as lists in articles; these are the drainer wallets' verified incoming drain txs. real incoming drain transactions to the drainer wallets, individually verified on-chain (dates match ZachXBT's reporting window):; sources: https://omniatech.io/pages/phishing-scammer-steals-1m-in-eth-and-nfts-in-a-day-remains-active/ \u00b7 https://cointelegraph.com/news/notorious-monkey-drainer-crypto-scammer-says-they-re-shutting-down",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x534d3ddcb310a418f5e9bb03a665aeb2e4165017cf9daa25627488c7abf4f74c",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "attack_type": "drainer_kit",
+    "label_provenance": "Monkey Drainer Phishing Operation; 2022-10-24; caveat: per-victim drain txs are not published as lists in articles; these are the drainer wallets' verified incoming drain txs. real incoming drain transactions to the drainer wallets, individually verified on-chain (dates match ZachXBT's reporting window):; sources: https://omniatech.io/pages/phishing-scammer-steals-1m-in-eth-and-nfts-in-a-day-remains-active/ \u00b7 https://cointelegraph.com/news/notorious-monkey-drainer-crypto-scammer-says-they-re-shutting-down",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x58149e2a3bbe3796ac757b596e2ed49acd81d04f6f22c7da38608edb5667bca4",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "attack_type": "drainer_kit",
+    "label_provenance": "Monkey Drainer Phishing Operation; 2022-10-21; caveat: per-victim drain txs are not published as lists in articles; these are the drainer wallets' verified incoming drain txs. real incoming drain transactions to the drainer wallets, individually verified on-chain (dates match ZachXBT's reporting window):; sources: https://omniatech.io/pages/phishing-scammer-steals-1m-in-eth-and-nfts-in-a-day-remains-active/ \u00b7 https://cointelegraph.com/news/notorious-monkey-drainer-crypto-scammer-says-they-re-shutting-down",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5904e495c8cfadc5ec4cf46d5c66f766247d0eb72eaf84b9781fe9e92dc52c4f",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "attack_type": "drainer_kit",
+    "label_provenance": "Monkey Drainer Phishing Operation; 2022-10-19; caveat: per-victim drain txs are not published as lists in articles; these are the drainer wallets' verified incoming drain txs. real incoming drain transactions to the drainer wallets, individually verified on-chain (dates match ZachXBT's reporting window):; sources: https://omniatech.io/pages/phishing-scammer-steals-1m-in-eth-and-nfts-in-a-day-remains-active/ \u00b7 https://cointelegraph.com/news/notorious-monkey-drainer-crypto-scammer-says-they-re-shutting-down",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x330a37fbcb2076bf2a1284d2885046b9229ee588b629f7448363726d198401b4",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "attack_type": "drainer_kit",
+    "label_provenance": "Monkey Drainer Phishing Operation; 2023-02-28; caveat: per-victim drain txs are not published as lists in articles; these are the drainer wallets' verified incoming drain txs. real incoming drain transactions to the drainer wallets, individually verified on-chain (dates match ZachXBT's reporting window):; sources: https://omniatech.io/pages/phishing-scammer-steals-1m-in-eth-and-nfts-in-a-day-remains-active/ \u00b7 https://cointelegraph.com/news/notorious-monkey-drainer-crypto-scammer-says-they-re-shutting-down",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5385c8e48b9059fd88a6620ddb1d7d63320f10bbd530c4add08fa4e6423bba83",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "attack_type": "drainer_kit",
+    "label_provenance": "Monkey Drainer Phishing Operation; 2023-02-28; caveat: per-victim drain txs are not published as lists in articles; these are the drainer wallets' verified incoming drain txs. real incoming drain transactions to the drainer wallets, individually verified on-chain (dates match ZachXBT's reporting window):; sources: https://omniatech.io/pages/phishing-scammer-steals-1m-in-eth-and-nfts-in-a-day-remains-active/ \u00b7 https://cointelegraph.com/news/notorious-monkey-drainer-crypto-scammer-says-they-re-shutting-down",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2cd8af31cff096f92e2d8bfb348c47f109283413e857e7cac800617543b9de69",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "attack_type": "drainer_kit",
+    "label_provenance": "Monkey Drainer Phishing Operation; 2023-02-27; caveat: per-victim drain txs are not published as lists in articles; these are the drainer wallets' verified incoming drain txs. real incoming drain transactions to the drainer wallets, individually verified on-chain (dates match ZachXBT's reporting window):; sources: https://omniatech.io/pages/phishing-scammer-steals-1m-in-eth-and-nfts-in-a-day-remains-active/ \u00b7 https://cointelegraph.com/news/notorious-monkey-drainer-crypto-scammer-says-they-re-shutting-down",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd6799eda08a403d5e86f0e5974a7afb13f4a3927499da4da8d90f094c75d1e56",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "attack_type": "drainer_kit",
+    "label_provenance": "Monkey Drainer Phishing Operation; 2023-02-27; caveat: per-victim drain txs are not published as lists in articles; these are the drainer wallets' verified incoming drain txs. real incoming drain transactions to the drainer wallets, individually verified on-chain (dates match ZachXBT's reporting window):; sources: https://omniatech.io/pages/phishing-scammer-steals-1m-in-eth-and-nfts-in-a-day-remains-active/ \u00b7 https://cointelegraph.com/news/notorious-monkey-drainer-crypto-scammer-says-they-re-shutting-down",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x12e64fae790939de91f3e58cb53a1ef0257a01845ea23f75acc31d484f816d75",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Monkey Drainer Phishing Operation",
+    "attack_type": "drainer_kit",
+    "label_provenance": "Monkey Drainer Phishing Operation; 2023-02-27; caveat: per-victim drain txs are not published as lists in articles; these are the drainer wallets' verified incoming drain txs. real incoming drain transactions to the drainer wallets, individually verified on-chain (dates match ZachXBT's reporting window):; sources: https://omniatech.io/pages/phishing-scammer-steals-1m-in-eth-and-nfts-in-a-day-remains-active/ \u00b7 https://cointelegraph.com/news/notorious-monkey-drainer-crypto-scammer-says-they-re-shutting-down",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x814f271c28308b29f2d0994491c0bd5f11c5c32b1cb3a3225a337bc8a569c4e9",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "FTX Drainer",
+    "attack_type": "exchange_hack",
+    "label_provenance": "FTX Drainer; 2022-11-15; caveat: Correction: an earlier draft of this research used `0x59ABf3837Fa962d685D9406Cc876aB3f6a0c7d0`, which has 39 hex chars and is NOT a valid address. The correct address above was verified on-chain. these are solver-executed settlement txs containing the drainer's orders, not EOAs the drainer signed directly. The drainer's initial FTX withdrawal txs are not published as full hashes in accessible sources. the drainer's CoW Protocol swap-settlement transactions (owner = drainer address, per CoW API; timestamps Nov 12 & 15, 2022):; sources: https://etherscan.io/address/0x59abf3837fa962d6853b4cc0a19513aa031fd32b \u00b7 https://thecryptobasic.com/2022/11/12/ftx-hacker-swaps-400-billion-shiba-inu-to-ethereum/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4e9e52d8cbeaf1a647d65a8a699b5fc6bf9abb0a5e00158824250d5ae6adb674",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "FTX Drainer",
+    "attack_type": "exchange_hack",
+    "label_provenance": "FTX Drainer; 2022-11-15; caveat: Correction: an earlier draft of this research used `0x59ABf3837Fa962d685D9406Cc876aB3f6a0c7d0`, which has 39 hex chars and is NOT a valid address. The correct address above was verified on-chain. these are solver-executed settlement txs containing the drainer's orders, not EOAs the drainer signed directly. The drainer's initial FTX withdrawal txs are not published as full hashes in accessible sources. the drainer's CoW Protocol swap-settlement transactions (owner = drainer address, per CoW API; timestamps Nov 12 & 15, 2022):; sources: https://etherscan.io/address/0x59abf3837fa962d6853b4cc0a19513aa031fd32b \u00b7 https://thecryptobasic.com/2022/11/12/ftx-hacker-swaps-400-billion-shiba-inu-to-ethereum/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x8a0116411860dce6987d7baf2d4cf70c3f475b2ac1db76229185f7a2f0ee837b",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "FTX Drainer",
+    "attack_type": "exchange_hack",
+    "label_provenance": "FTX Drainer; 2022-11-15; caveat: Correction: an earlier draft of this research used `0x59ABf3837Fa962d685D9406Cc876aB3f6a0c7d0`, which has 39 hex chars and is NOT a valid address. The correct address above was verified on-chain. these are solver-executed settlement txs containing the drainer's orders, not EOAs the drainer signed directly. The drainer's initial FTX withdrawal txs are not published as full hashes in accessible sources. the drainer's CoW Protocol swap-settlement transactions (owner = drainer address, per CoW API; timestamps Nov 12 & 15, 2022):; sources: https://etherscan.io/address/0x59abf3837fa962d6853b4cc0a19513aa031fd32b \u00b7 https://thecryptobasic.com/2022/11/12/ftx-hacker-swaps-400-billion-shiba-inu-to-ethereum/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa38cf32e3d388f1b9782dee4a8622bb8df614921d3bf93580cf6d5f1e3a8ca9c",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "FTX Drainer",
+    "attack_type": "exchange_hack",
+    "label_provenance": "FTX Drainer; 2022-11-15; caveat: Correction: an earlier draft of this research used `0x59ABf3837Fa962d685D9406Cc876aB3f6a0c7d0`, which has 39 hex chars and is NOT a valid address. The correct address above was verified on-chain. these are solver-executed settlement txs containing the drainer's orders, not EOAs the drainer signed directly. The drainer's initial FTX withdrawal txs are not published as full hashes in accessible sources. the drainer's CoW Protocol swap-settlement transactions (owner = drainer address, per CoW API; timestamps Nov 12 & 15, 2022):; sources: https://etherscan.io/address/0x59abf3837fa962d6853b4cc0a19513aa031fd32b \u00b7 https://thecryptobasic.com/2022/11/12/ftx-hacker-swaps-400-billion-shiba-inu-to-ethereum/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x71e8fb2dc5afc7e8118273828d35b3c385bf5f464421fb4b42b2a2726abf3512",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "FTX Drainer",
+    "attack_type": "exchange_hack",
+    "label_provenance": "FTX Drainer; 2022-11-15; caveat: Correction: an earlier draft of this research used `0x59ABf3837Fa962d685D9406Cc876aB3f6a0c7d0`, which has 39 hex chars and is NOT a valid address. The correct address above was verified on-chain. these are solver-executed settlement txs containing the drainer's orders, not EOAs the drainer signed directly. The drainer's initial FTX withdrawal txs are not published as full hashes in accessible sources. the drainer's CoW Protocol swap-settlement transactions (owner = drainer address, per CoW API; timestamps Nov 12 & 15, 2022):; sources: https://etherscan.io/address/0x59abf3837fa962d6853b4cc0a19513aa031fd32b \u00b7 https://thecryptobasic.com/2022/11/12/ftx-hacker-swaps-400-billion-shiba-inu-to-ethereum/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2016f75eea22aae5689c226e9d7406bc204f25713299e5474e99b5c3cb7988a2",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "FTX Drainer",
+    "attack_type": "exchange_hack",
+    "label_provenance": "FTX Drainer; 2022-11-15; caveat: Correction: an earlier draft of this research used `0x59ABf3837Fa962d685D9406Cc876aB3f6a0c7d0`, which has 39 hex chars and is NOT a valid address. The correct address above was verified on-chain. these are solver-executed settlement txs containing the drainer's orders, not EOAs the drainer signed directly. The drainer's initial FTX withdrawal txs are not published as full hashes in accessible sources. the drainer's CoW Protocol swap-settlement transactions (owner = drainer address, per CoW API; timestamps Nov 12 & 15, 2022):; sources: https://etherscan.io/address/0x59abf3837fa962d6853b4cc0a19513aa031fd32b \u00b7 https://thecryptobasic.com/2022/11/12/ftx-hacker-swaps-400-billion-shiba-inu-to-ethereum/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7fe367e61a7680d4b563d05ed82658af8d5a88f98c332d66f087a3db7e6f9097",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "FTX Drainer",
+    "attack_type": "exchange_hack",
+    "label_provenance": "FTX Drainer; 2022-11-12; caveat: Correction: an earlier draft of this research used `0x59ABf3837Fa962d685D9406Cc876aB3f6a0c7d0`, which has 39 hex chars and is NOT a valid address. The correct address above was verified on-chain. these are solver-executed settlement txs containing the drainer's orders, not EOAs the drainer signed directly. The drainer's initial FTX withdrawal txs are not published as full hashes in accessible sources. the drainer's CoW Protocol swap-settlement transactions (owner = drainer address, per CoW API; timestamps Nov 12 & 15, 2022):; sources: https://etherscan.io/address/0x59abf3837fa962d6853b4cc0a19513aa031fd32b \u00b7 https://thecryptobasic.com/2022/11/12/ftx-hacker-swaps-400-billion-shiba-inu-to-ethereum/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x37a8f4cf553c7e354a38e030cd2303478662f4c28b6f60c5cbc42e5e28d270d7",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "FTX Drainer",
+    "attack_type": "exchange_hack",
+    "label_provenance": "FTX Drainer; 2022-11-12; caveat: Correction: an earlier draft of this research used `0x59ABf3837Fa962d685D9406Cc876aB3f6a0c7d0`, which has 39 hex chars and is NOT a valid address. The correct address above was verified on-chain. these are solver-executed settlement txs containing the drainer's orders, not EOAs the drainer signed directly. The drainer's initial FTX withdrawal txs are not published as full hashes in accessible sources. the drainer's CoW Protocol swap-settlement transactions (owner = drainer address, per CoW API; timestamps Nov 12 & 15, 2022):; sources: https://etherscan.io/address/0x59abf3837fa962d6853b4cc0a19513aa031fd32b \u00b7 https://thecryptobasic.com/2022/11/12/ftx-hacker-swaps-400-billion-shiba-inu-to-ethereum/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2aa93a5503933cb34a521cca87053255054e1bbeb626692da330b8948b86f26b",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "FTX Drainer",
+    "attack_type": "exchange_hack",
+    "label_provenance": "FTX Drainer; 2022-11-12; caveat: Correction: an earlier draft of this research used `0x59ABf3837Fa962d685D9406Cc876aB3f6a0c7d0`, which has 39 hex chars and is NOT a valid address. The correct address above was verified on-chain. these are solver-executed settlement txs containing the drainer's orders, not EOAs the drainer signed directly. The drainer's initial FTX withdrawal txs are not published as full hashes in accessible sources. the drainer's CoW Protocol swap-settlement transactions (owner = drainer address, per CoW API; timestamps Nov 12 & 15, 2022):; sources: https://etherscan.io/address/0x59abf3837fa962d6853b4cc0a19513aa031fd32b \u00b7 https://thecryptobasic.com/2022/11/12/ftx-hacker-swaps-400-billion-shiba-inu-to-ethereum/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xcb8b20f55ababdc8895f26b2216619e810c505968b3dfdacc92abb8f7984d5a6",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "FTX Drainer",
+    "attack_type": "exchange_hack",
+    "label_provenance": "FTX Drainer; 2022-11-12; caveat: Correction: an earlier draft of this research used `0x59ABf3837Fa962d685D9406Cc876aB3f6a0c7d0`, which has 39 hex chars and is NOT a valid address. The correct address above was verified on-chain. these are solver-executed settlement txs containing the drainer's orders, not EOAs the drainer signed directly. The drainer's initial FTX withdrawal txs are not published as full hashes in accessible sources. the drainer's CoW Protocol swap-settlement transactions (owner = drainer address, per CoW API; timestamps Nov 12 & 15, 2022):; sources: https://etherscan.io/address/0x59abf3837fa962d6853b4cc0a19513aa031fd32b \u00b7 https://thecryptobasic.com/2022/11/12/ftx-hacker-swaps-400-billion-shiba-inu-to-ethereum/",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x48164d3adbab78c2cb9876f6e17f88e321097fcd14cadd57556866e4ef3e185d",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "WazirX Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "WazirX Hack; **The exploit itself**: execTransaction into the WazirX Safe, block 20331565, 2024-07-18 06:17:47 UTC; source: weex.com Bybit/WazirX comparison; verified on-chain",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xfb546fa579ff71412b7a1e95ffac305df18d9a15432b11420c30c744a631f581",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "WazirX Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "WazirX Hack; Fund movement to hacker address; source: https://www.BITGET.com/news/detail/12560604106211",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xaa02ec9df4979f4354256a2567acdcc932d6c9698cfdf25fb6bf9d83377559c3",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "WazirX Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "WazirX Hack; Fund movement to hacker address; source: https://www.BITGET.com/news/detail/12560604106211",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2407554f821412ec6f6d95d143ab01676b63dc7b6c3af7794b22dcc019349f8e",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "WazirX Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "WazirX Hack; Fund movement to hacker address; source: https://www.BITGET.com/news/detail/12560604106211",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xed14156ed3670a3e9db938f3323d21ddf322c66cff2391ee58373e500dd8c80b",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "WazirX Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "WazirX Hack; Fund movement to hacker address; source: https://www.BITGET.com/news/detail/12560604106211",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x03a015d0faa5c763ff2c101fc91ab656607f4cbf9846340b0ba2daca82931b99",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "WazirX Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "WazirX Hack; Fund movement to hacker address; source: https://www.BITGET.com/news/detail/12560604106211",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa1bf5d6aaf1faaa94e2a844fdb3c0686821af6075571a73c7ba9cf66925eb35a",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "Bybit Hack; Malicious implementation contract deployment, 2025-02-19 (matches SlowMist timeline); caveat: the Feb 21 `execTransaction` exploit tx hash itself was not recoverable from accessible sources; dispersion txs are post-exploit fund movements.; source: Verichains report: https://github.com/tayvano/lazarus-bluenoroff-research/raw/refs/heads/main/pdfs/2025-02-24_Bybit-Incident-Investigation_Preliminary-Report_Verichains.pdf",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x1cff75dab39ed9393b06623131adb9b370bb6422c9f233a366e2698494ef0fb5",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "Bybit Hack; Fund dispersion (2025-03-03); caveat: the Feb 21 `execTransaction` exploit tx hash itself was not recoverable from accessible sources; dispersion txs are post-exploit fund movements.; source: on-chain, from verified main hacker address",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x6dc8b3105032c0b6c6cb1b24e7db24ba2ee4f6089c07bbb354087bc2836df00a",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "Bybit Hack; Fund dispersion (2025-03-03); caveat: the Feb 21 `execTransaction` exploit tx hash itself was not recoverable from accessible sources; dispersion txs are post-exploit fund movements.; source: on-chain, from verified main hacker address",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0ba39218157d9b8b27ae00713311abcb811030dc4e40f0bd6fc10192573ba85f",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "Bybit Hack; Fund dispersion (2025-03-03); caveat: the Feb 21 `execTransaction` exploit tx hash itself was not recoverable from accessible sources; dispersion txs are post-exploit fund movements.; source: on-chain, from verified main hacker address",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xedc92e38fec78cc8a37df2783291136e9db0b619d163980d6a1b92c6c5964316",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "Bybit Hack; Fund dispersion (2025-03-03); caveat: the Feb 21 `execTransaction` exploit tx hash itself was not recoverable from accessible sources; dispersion txs are post-exploit fund movements.; source: on-chain, from verified main hacker address",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf4a3ab131af116fd9bbe7b3484019e4d32850737c01ec1c45be6ba7608a9cd92",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "Bybit Hack; Fund dispersion (2025-03-03); caveat: the Feb 21 `execTransaction` exploit tx hash itself was not recoverable from accessible sources; dispersion txs are post-exploit fund movements.; source: on-chain, from verified main hacker address",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5b9f8d27a9e35d5e68c56617675574ba94f3986342e58da0a26e1ae38c738eb9",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "Bybit Hack; Fund dispersion (2025-03-03); caveat: the Feb 21 `execTransaction` exploit tx hash itself was not recoverable from accessible sources; dispersion txs are post-exploit fund movements.; source: on-chain, from verified main hacker address",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xcc1928480ec116cac1d2b4f958a03e7713497f201cd5f1d014dacd5e3e6f1810",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "Bybit Hack; Fund dispersion (2025-03-03); caveat: the Feb 21 `execTransaction` exploit tx hash itself was not recoverable from accessible sources; dispersion txs are post-exploit fund movements.; source: on-chain, from verified main hacker address",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x1f47e2432e12ba4eacf818b58ae14c3df792dcf331e4aa625b7895649dee62c9",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "exchange_hack",
+    "label_provenance": "Bybit Hack; Fund dispersion (2025-03-03); caveat: the Feb 21 `execTransaction` exploit tx hash itself was not recoverable from accessible sources; dispersion txs are post-exploit fund movements.; source: on-chain, from verified main hacker address",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xedd31e2a949b7957a786d44b071dbe1bc5abd5c57e269edb9ec2bf1af30e9ec4",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Wintermute Hack",
+    "attack_type": "private_key",
+    "label_provenance": "Wintermute Hack; Main attack tx, drained ~90 tokens via sweepTokens; source: https://github.com/1712n/dn-institute/blob/HEAD/content/research/cyberattacks/incidents/2022-09-20-Wintermute.md",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc253450fc3e0e124224aef2936c13b371a86056e82e778113fc3ce8800bbe876",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Wintermute Hack",
+    "attack_type": "private_key",
+    "label_provenance": "Wintermute Hack; Second attack tx, block 15572706; source: https://etherscan.io/address/0x0248f752802b2cfb4373cc0c3bc3964429385c26",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x16ef49e81bf79862c91002fea39925e5cb425ab3dbea2ab9b1f833e556947289",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Wintermute Hack",
+    "attack_type": "private_key",
+    "label_provenance": "Wintermute Hack; Loot consolidation, 6,919.69 WETH; source: https://etherscan.io/address/0xe74b28c2eAe8679e3cCc3a94d5d0dE83CCB84705",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x46eec2398ce207ee11dfb0144ba0f7a62308299d6fbc3364b2b0c86694258986",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Wintermute Hack",
+    "attack_type": "private_key",
+    "label_provenance": "Wintermute Hack; Attack funding, 9.9435 ETH from Tornado Cash; source: https://etherscan.io/address/0xe74b28c2eAe8679e3cCc3a94d5d0dE83CCB84705",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xcd314668aaa9bbfebaf1a0bd2b6553d01dd58899c508d4729fa7311dc5d33ad7",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Beanstalk Farms Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Beanstalk Farms Hack; Main attack tx: ~$1B Aave flash loan \u2192 67% governance \u2192 emergencyCommit, block 14602790; source: https://medium.com/@nvy_0x/the-beanstalk-bean-exploit-b038f4d324ea",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xfdd9acbc3fae083d572a2b178c8ca74a63915841a8af572a10d0055dbe91d219",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Beanstalk Farms Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Beanstalk Farms Hack; Prep (Apr 16): swapped 73 ETH \u2192 212,858 BEAN; source: https://medium.com/@nvy_0x/the-beanstalk-bean-exploit-b038f4d324ea",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf5a698984485d01e09744e8d7b8ca15cd29aa430a0137349c8c9e19e60c0bb9d",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Beanstalk Farms Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Beanstalk Farms Hack; Prep (Apr 16): deposited BEAN into Silo; source: https://medium.com/@nvy_0x/the-beanstalk-bean-exploit-b038f4d324ea",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x68cdec0ac76454c3b0f7af0b8a3895db00adf6daaf3b50a99716858c4fa54c6f",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Beanstalk Farms Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Beanstalk Farms Hack; BIP-18 proposal tx; source: https://medium.com/@nvy_0x/the-beanstalk-bean-exploit-b038f4d324ea",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x9575e478d7c542558ecca52b27072fa1f1ec70679106bdbd62f3bb4d6c87a80d",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Beanstalk Farms Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Beanstalk Farms Hack; BIP-19 (InitBip18) proposal tx; source: https://medium.com/@nvy_0x/the-beanstalk-bean-exploit-b038f4d324ea",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7eced280e330a2f6ad08dc89ae438dfc6ee11367339cce48b016ad8e98b4ed46",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "BadgerDAO Hack",
+    "attack_type": "frontend_compromise",
+    "label_provenance": "BadgerDAO Hack; caveat: `transferFrom` theft txs draining victim vaults/wallets, blocks 13724845\u201313724888 (source: Etherscan-labeled address page https://etherscan.io/address/0x1fcdb04d0c5364fbd92c73ca8af9baa72c269107):",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x109665449730bb6d380b3ee613ff530c573778664836f2261500a933d770c3a2",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "BadgerDAO Hack",
+    "attack_type": "frontend_compromise",
+    "label_provenance": "BadgerDAO Hack; caveat: `transferFrom` theft txs draining victim vaults/wallets, blocks 13724845\u201313724888 (source: Etherscan-labeled address page https://etherscan.io/address/0x1fcdb04d0c5364fbd92c73ca8af9baa72c269107):",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2cae40c574529b241628fb52546793b676af1feb5206fdec8c6da6565202cf6a",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "BadgerDAO Hack",
+    "attack_type": "frontend_compromise",
+    "label_provenance": "BadgerDAO Hack; caveat: `transferFrom` theft txs draining victim vaults/wallets, blocks 13724845\u201313724888 (source: Etherscan-labeled address page https://etherscan.io/address/0x1fcdb04d0c5364fbd92c73ca8af9baa72c269107):",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xb463508010937f1849a651c46fbc01b77ab0c0b33dfd7c45c0559cbdd39c7955",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "BadgerDAO Hack",
+    "attack_type": "frontend_compromise",
+    "label_provenance": "BadgerDAO Hack; caveat: `transferFrom` theft txs draining victim vaults/wallets, blocks 13724845\u201313724888 (source: Etherscan-labeled address page https://etherscan.io/address/0x1fcdb04d0c5364fbd92c73ca8af9baa72c269107):",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xbf2cdf55d1851737e3d7de6e735aed00f4276fc536afd7ae96ab080fedd7e0a2",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "BadgerDAO Hack",
+    "attack_type": "frontend_compromise",
+    "label_provenance": "BadgerDAO Hack; caveat: `transferFrom` theft txs draining victim vaults/wallets, blocks 13724845\u201313724888 (source: Etherscan-labeled address page https://etherscan.io/address/0x1fcdb04d0c5364fbd92c73ca8af9baa72c269107):",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4f8b5c1c8c839bdce646918ea906084eb78f7a78c185ccb7a99ccadc3382b220",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "BadgerDAO Hack",
+    "attack_type": "frontend_compromise",
+    "label_provenance": "BadgerDAO Hack; caveat: `transferFrom` theft txs draining victim vaults/wallets, blocks 13724845\u201313724888 (source: Etherscan-labeled address page https://etherscan.io/address/0x1fcdb04d0c5364fbd92c73ca8af9baa72c269107):",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x74a3e0f3b3f5e7ea8b4e9ba61202b172e473a962bea3d5899da06bee649da0f0",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "BadgerDAO Hack",
+    "attack_type": "frontend_compromise",
+    "label_provenance": "BadgerDAO Hack; caveat: `transferFrom` theft txs draining victim vaults/wallets, blocks 13724845\u201313724888 (source: Etherscan-labeled address page https://etherscan.io/address/0x1fcdb04d0c5364fbd92c73ca8af9baa72c269107):",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xb7acedd6a0778271800d42cd821e5db031ce17599ede6f0cad5d9321b509ea58",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "BadgerDAO Hack",
+    "attack_type": "frontend_compromise",
+    "label_provenance": "BadgerDAO Hack; caveat: `transferFrom` theft txs draining victim vaults/wallets, blocks 13724845\u201313724888 (source: Etherscan-labeled address page https://etherscan.io/address/0x1fcdb04d0c5364fbd92c73ca8af9baa72c269107):",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x24d8f08fd2eda7f5f08b212ad3bdddb41118de760cba2d3726bca4e1fa79c935",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "BadgerDAO Hack",
+    "attack_type": "frontend_compromise",
+    "label_provenance": "BadgerDAO Hack; caveat: `transferFrom` theft txs draining victim vaults/wallets, blocks 13724845\u201313724888 (source: Etherscan-labeled address page https://etherscan.io/address/0x1fcdb04d0c5364fbd92c73ca8af9baa72c269107):",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x550d3d23c7c5ad68513ba00ab06e4a3d98de8c6da174d89c268ef697c4ed3b61",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "BadgerDAO Hack",
+    "attack_type": "frontend_compromise",
+    "label_provenance": "BadgerDAO Hack; caveat: `transferFrom` theft txs draining victim vaults/wallets, blocks 13724845\u201313724888 (source: Etherscan-labeled address page https://etherscan.io/address/0x1fcdb04d0c5364fbd92c73ca8af9baa72c269107):",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0fe2542079644e107cbf13690eb9c2c65963ccb79089ff96bfaf8dced2331c92",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Cream Finance Hack",
+    "attack_type": "flash_loan",
+    "label_provenance": "Cream Finance Hack; Main exploit tx ($2B Aave + $500M Maker flash loans, 68 assets); source: https://github.com/1712n/dn-institute/blob/HEAD/content/research/cyberattacks/incidents/2021-10-27-Cream-Finance.md",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4f4562a6b6565df48616f094776f8b20ba534c589081a7860b7408b486412ce1",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x021e56f1d4f4edde2d7060ccb064b790f2d65568a241fa32b19fdc3502686ccd",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x8ab727e24a2b60cb699630d7a1d5ae455c6531de502f73f52fe9399a352a0970",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x6a4f0fbb028aa699665847db58ff50d17f980a0b0ef32b6271f346e727f7dd1b",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x898f06786b8d1a51424ba723f89447b45fa804ad65b53c0134d0db3f18d4e95d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc0bf1a2f211762d037f1c7a225bd64a143a14104fac70ccfe5a6fc3c3b974635",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0383cf7fa54a706c8919389ce2320a5b599ab06b5a1f27e90336adefbeebe4b5",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x8141189ffc0ba83b5da11300f8c93930706735482000532472b13c7de9e799e7",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd63f07e87becf7eefcb90c69cda5f0be7516e6ab18909ff52dc63ce16bc8da3b",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf8529f74f7defb62288a6f33d028ee5dd1de10a5f59b783be839f3a34861c7fa",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x09c5d0577d7f36a03bbe33b355343305c27c5fbc4446fa780dff173545cbf2aa",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x86d68e554304b3ac068ed0780e91715b43e6f4ea46353e1b9634f538888e3257",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x57c55fd10f1b8c10d95b6a5fecf83ddcf5c2a206ff4cee6ef7093366b0b183cb",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3a20f2faa5446d7a57cc8508a5d332d190ddd15acd8e7745c55b406b4c33920d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xe5fcbae9e04855e491c13df878a96bb15a42e23aad51219075460affff99c1b3",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x83a446905875af8f72e3540ed5fa206e54065f1245827f03c63c22808aabafcb",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x6eb15694fe18eff21a092c6b7a9b8259c3a3b6d37d523a05b2b9a6fd2fb6f7d1",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7b0618647a529a5b49ed9c1f5036eb911c950eea06d9839fdc1ca90d68b5cd31",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x92753eea182c16dfe60f8ac80096afdedf8af4d089131bfbdebb334470b6634c",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2b1df80c66206d3899616bf6987a2a3521c454d7bfd01b7214577165c5ec64bd",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5a7355201063b1e29240db351cad520f70d88f91705caa22468ab1e7cfdb3414",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xe151a560c91ba9c5e0002039114e3e18f293878bac7b1bf549139e8251dfedad",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xfd23d6bccfc083888aa156780160ca7a4e867ab9e5569e6c4eadad7c5409f81f",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x6034260e7d5ddc01a9f9f6926e278d1d826acb92152077fa92d233035c481381",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139675); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3fb2aaa95b7813b1018c4449fbdd5dc06564512d7f8fa6fde5be87c2de8bc8cf",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x31e75d20dbb36a02d14d175837f6ede31f87f723b471a642b819821e96e8b896",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd7ac41f2bee34006bcd10aec858a5ffe8877ff0e8b75bb1d2c3e0446b7255620",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x9430e70d05f654a545a19a336bcd03fd519706cf7c184e32f738bfaa0e576226",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xb0daa9592ee76cedee9fe01054de4d7d7de751100f587b78f4aa151d0d90c517",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x70d70f0c13ba349aec129eadbe9fd822347b5d8b4e7f9c132401c51401b5515b",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0c53aba527371bd633fc478179875acb5fbf15f04531a8876bc447fac1ba948c",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xe982c7bada5995cb85d7ebad30fbf4f1ee6534a195f44eacf78724af80bcead3",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3fd7fb0a67e5f4ab067421df472541199488308468bbaedfeb81b98e558e2a91",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x641ec620d8babcb4ce5b5967815aa58521f4d27725b2be6d8c361c680b052aba",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4941825f23fec27bd866043c34d84d8f19f64153f1fd207da3bb97e99d483824",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xe69064006719331d0c82107bc3d92d77cb410fb90e7463d1297a41fe8093039a",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x99542b98f865a8e54876d4d08a67eb3b5d8aeef2b27ac53be0b635291e7c306d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xaa53265ce374068900e64708004f9a40dddd53d497fdfd380b1c08b10214b702",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xfce10eb8529b86976c82e74c4d95772cb605af75969397431077c865c779fcb3",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x564d900df2eb3bb9b1c78dcf390053a86b2b969637e8bbbc60d48fcbb71207cd",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5a69e02157e1b3b676e3604a1c90ca9d2809ad69edc6bc576f448a1ef752017d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x693bdcc41ee1f2f9da302f9e69543ee9aa0565699f09e9db662a8223db630483",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x58b4ecd8a60a4bad9263b85407c28726d21c7fe4a543710f359db8190e66a861",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xbbd270e629006b25036c6e4fadfff1e108a9ec280b3dcdce8bddfe7f5c978794",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x65cfbaecd00762ad260841f75545e84580e477df83dfe21c0e6c5fec790d3a22",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x266c21cbd3e1ee9c2dc1d78dc18c747ccc2fc81c365f9bfad18a2415f154cc72",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xb271a90a1f0c5e73efed90a84186314d36dbfe7cd7403a471d00ded34648370e",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x37dd99c96d403057d6f9dd9c2c01ed82bf196426aa1bb6fefa5b5ebd0a092f1e",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xe61edd02deee41734086c18057b1fc8d3ad4d393366c3ca2c454cf581fd26f49",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x1caa7147cbd6a71329451933cef1b47e4e5e2ec603a3897b3b0809c3bea8a25a",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x44501aa0b6ac57b73ac660eadf3144c289ecc9d71515091ead97e9683982fe3b",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x97d680f50d8429d527e52d66620c02f2e973c3bd56c02b9899f8b6e0d9fe78dc",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x6c106a926a58fca01712c9321b12c6f9446843268378d6f4d275be77ee8a97bb",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x198b9a9fb9dfee00a1ec7566379bd76558a50c2b77c773f99ff41026d11417e3",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf012f14f4ab0e55eee6296905bb788a87206ceaf96e3f67b33b4c1586bc33c23",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x89ffe2f3215411d4aa8bff10b4dbc21d542378f35b8cd51a54b9dd2fdcac862e",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc62a253f4f7d4e2191bed506d6e9ab7a432d1058b761b8a364b619c8e783973d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x97d12a23dc040f486504fe3695ed90bf5053b85d1ca9c2a5e3bf310ab7f40f1d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa03c55a26689fc93832a67dd57321dc7c3907d061c7faf245c284c310b6d0629",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x58826c83703f07bd644faa5a0f73c49cb023bdad601caebb8286731f3f87eb92",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5256d2f5cd076f8ccd3c42b7f667d8e95dede27d37208d6cc4b45aa8fe63fbc9",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa89436f8bbaa0630c07128afa99e7d7e74934119fdca9b068e1ddbce4a1f3f84",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd984bd92e88b041d41ef1667c109f11f5da821eeb08140eb138da304795cdb4e",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2c60274032915624b3a95de4ebbf9c8e31fe646b4ec74385faf47e5334ddf4fb",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7f876fcb6f4391ee58e5c0a31aa027f3ff596c3194d10a615ddee5014d458fb5",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xcd8982543970728de8ce0de315dd701173cf6556d1cbaf53e13d3ab51f991f12",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0b70e6c2f65b2d9450d96c2f58b3fb19580339e4700ee40ae7f5642843166ad6",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x03d92804a7745e33226f3acf5be46d26171ed11b1768d30a8f8b2fc687f0c0ae",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x8803fa2b68f25be9029222c460df91c33a8f9f7ac3bddbb5cb1ab0f6b35d3e32",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x17080b5c0a3ee9dde7163db93084e49b6da6cbd140c3626b0aeeec200c07f9aa",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xdda720e9c5ce8ff7b039750b9e4364cd42b649bd56e32c495709aced22d49f42",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd5939640c22c1aa8d666cca72ef2bd16eb91907750d357ac65d595f2faf77bee",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xb6639add297ec6ffd09f7e7f45e2f491796204094fd0e3b4587db31f7bdf2ef2",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x08aba3b10d9c139edd3a3e62dc014eaa8778772acc5ff53fff23595c9ab91d03",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x1f27a282ee46e98f5048254590a7fbfc65fe1f563268edb3b6de1320922d2bbb",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3da2eee4572c44472ae2a5c08b4153ab68b9f6f28466f63def1290b24aab2fed",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xad9a0d4c7b03717f83bd874bc8f19a15428b0982ffa4318c7efe287bfefd65a1",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x239c5dcc43d6bd4a75412a7147838bdbfbc3d3de6957bf8f6ed8d9c5ee09b9d1",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x043cd967420c590723b8031f2d0270c0415606368973a28ff7283da6c7240f8a",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2ae08c0bbb0ced97eefc1796bf56a574c8c8465001dae29dff98c4006615c688",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x730621a810692fc61b202fcc9a19626860287153910d14330ee60de1a9deb24c",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x23e9823de7fe2f1d7ad6c61eff1a1a59e667323d51a282e1bee6a2078b1fc867",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0e8dc38fe9efc4fa4ed2e2320434bab4828f3a1f91c0f39b991e46a3ed4623b8",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2fe9078754888de5916e1f3916993d2340ee671ac2808ac4207050e35d7ececf",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc3423d1c624ac9ec88b69ebec67ce162709cc2134dbe2ab21ed7338665e162d9",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc76bb2534c74e8d6260da162504d1f44a800ae109ec7d2a0a70338b61e0783fb",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xff7e3bf666e7d3c891ab05baa551059e9e5dcd7b0ecc733b14cf964569e85a96",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x9922ba8a6d4df20c5556f712cbdddd38659af31d5e1f131862fe53c793e1a036",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x29d7044663a29443cc2955afbb5e02e80c4455cfb64154d683147da094ec0878",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xdcfcecd302b1ec107a38188384bd81ac25bc7afc646e183a4c89b1a13e96b11d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x671225dedc5779ecb45c5dde1873c10ad1bde74c87ff6a81a94ddc2735a63507",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5e570e1bc5f40a56c9690999c5e6a17db91b524c2301e7fe2942f2512aeb2144",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0c0e266b77cffc7ecd4be1313c0c7fbe2a05535b8cc66d0e6cfac78d21e9e13d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x72b53a0480d7440aab126c05cc920a6868c9f7c0069d67dd558ea38aae7ad648",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7aeb22b107f88583f4e07ed9b33cd90b782a1d76779428e3d689d9ecf7f70751",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xbdc0fd0793aa31c32b47f911a207383bdbc40a7541b7ecbc3f5252e62e953eb5",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd1ce217d4b74cacff133a350bb94923cfd8a375d3696d6fc964d6ecd14778d3e",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf2dbb0c45e2a66791e2bc1da1eede51f0018fc723266a57e5573b9a84ad02d72",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0a39d5a81b6532cccb382a270bb537f267caef90d2ae12f7b9c9e2410a19ac02",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf95cd2688e9fd5052621b304acf561c2059b30fc1c8fdb06011a31b93cf54d20",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x8f6950e1a27d9df5b13a101d4ec039624972a3d179ed279125d4aa1051634793",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5494aa66cb90aae3ad45a10ae58acbd14f5855cfcc6ecece3b3ebdafcdebdd62",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139676); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc4126bf443aa16389002e709942b32bbc6724dae497ecd5c9a9f03c4b7fd4985",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xac9c3fa27ceaf76a6486fb0c0d9f0f65e0d6e16acc6907d16f84eaab248caf64",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa6619b857ba4d406d4783169ab5efa7d7fd78568a5e119f767ca3c48ae972c3f",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd93b636e781eb115a38f8de01fa4beada927019309a5030edc0f3b0fba0a71f5",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x1929c1392f793eb46f93cc02d4230815a8f263445b9eeab414c88ff3dcdc756c",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xaafe3b53ab07ffc817f76805833ae51e3f07af29134f5a793abee3e19c7efed1",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4d951a8fa5a47bb09b9d556220a8a238625252d1839be590dc43998cd3981fd3",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x255bdd2592c17b2c3097e4bb55a649590626d49484bf1bfbd378265376043879",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7273187a8c2ca212e0dd256d9c79d72579488c6b90ef617db9aebc3f9223e940",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0de37658f3fc21a2710f227793b46bef2f3780e8a18bc69951ffe4f623d45570",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0bb8c412cb5f79a9dac113da8948b55658565b1e7b16918eb459cf2d73d8cef2",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x6ca20d33943f9f3b881f7472bacde8add142147a5e056836edc7791d071ca028",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x18e2ab5683fc33451072ecceb11524681b5d95d9aba27f02e215aa4d9cb37e64",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xed514f20859d92f77ea993552d89e69bf70f8bd661ab36443ca7cfc3799433bf",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2409c8a183b954796c94fd88720b2b8e5c223c28ea1f87c09040acd9da5c804d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc46aa7ea2a2597cd040e2f421c14758da8ff8403181cfd47116247116993e777",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xb5518cc1bd3622ab6c9a655cab80853d906c57f4e138cff64bb7c23589849874",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x221974419b344dfde3f6036c82eabc9f02c02f2d567bdae32ff9557e6e8ac79e",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x6644760034ff19ab6eedb07b23b57ca84e6df072df50953c775ebd720b765876",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x198dbb433b1c4f72e782ef91847d5ab8399c3bb1668109fdc21be15194d9a8b9",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xb9429db946c8dda31a562ea871526eddc2904821a92725a1f8c004918fa9bc68",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x374d08022618530ea26f4c3168459e5eb2496d125b5494fc3552058dbe220fbd",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x8b6295616c749ba5f78814352ac15f32de5aadc318c15ed920e0872e04490e6b",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4f99d4fe22c61e69187749584d75ad6fea066f3e48cb4f782b55ce778ce96517",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0b731131c55dbd669fb749d23ef166f285cd633c6c7d34fc985160412dc959fb",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc51156b6a97c667e0ba14f3bfa78f2b53c6dd0ceefbc6088a16bee52d25ae1c1",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa679ee4e917bb0eae1952a8b8c04f1ea0577b61a7d8012a77478dedb335afc17",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x82fae30dd71a88ece0c8e117f38ae9fab070f2830707ffad27cb200f7a238d40",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa254aaa704136668d7db07afbef5bc9dcf18fa4597ea2d2842d14066aa2286cd",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd5780f8295d6deb457273aaefa81948366a3633615b36e43ae3ba714b6831580",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x81aa62ecc0f059bb98297da16a8e8742244fb481c3c9e4960255abaa86281003",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x250ea24e3a3f948e679b04e338864114a66f8c70520ef6ac2a874174486f05a0",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x237592f03f47c834967537212250f814fd5d1b219e77e8d4202b7b7ccc318ef5",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x19134ad71e13ab366a66c4b92afa68bf438e747022b5a069f6ba9a07acbf5bed",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x54178f5853af1d736335ec87a1f23e1ec47d66f26de6be53dcbc565d415606ac",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x98281a003d47ab79475cd0547f991951852bfe45ebe7de97b80f250fbe7645f6",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0184d14953efc61349266693a815001657f44ba784d0b2f6f36fdb16aac7230a",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc4903ef37a1ccbfc4fbefb448aa0a1255f8ec7f8510dc8d54b229e766f5e0045",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7946be84e3839fc0072b42cd4cc901b7e7177b98b327a8da17ffe9b8526f865d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xffd7df243b0ac0433381e02aed57e7f42dd5c59f7f11facb202e34931a19d781",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4347ec02093073db1a25bff25513185afb837392196745dd034d062f972518e4",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xb84c502eb75f9aea3db026f72c98da2be980fb201f40fda38b943313deced3cf",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa533d620f0987f080eca87041696a8d545e2e35953b6259966260f4af758bb1d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7abbb06f2b55494088da7d47db02e9c638f5e9ec436679974ef9f58b38529f47",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139677); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x870cc2b62e1f439e84cb71a37aa0354d5c67c2242a90bab4d49e49d25bb64735",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x824812a46c4b209a3da4a65c346236e5446a19a24c7c49806ea5b78d71d71694",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xde3d659841404c4695791e705db42399833408de2ab2c1f6d6ea85a5310ea089",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf28aa8f5508ef6ced155375f9bea8781667355361a934ba6573cccfa8ee2b36f",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x45cc7501c6f21c54ec27143b782644b8d93c005f3373f6907128ddd9ed83b35a",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa835c2e0c7ecb17a9189132bb3c0e59bea48f5d62f67829e783fa04db3d36f8f",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xfacf34e3fd9ffd57626e38c319c33a4de337a90fb460c51b9ad670e967d7972a",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x1621830cc97e216d255f20670ac0524d0bacb3c17324e79f8d74c37fd2d6bc72",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf88239103d8f4728df0111d6d39da84308f5f513c9ac4db2079f8a3e4592ec7b",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x9bf610cda4991c37175293b6172ac463c04d50ba4960f88b65fc2338f6fc6502",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xbec9e726cbaf256321be68a5ac63fab164b615d4bc157d4d559b71494bff69aa",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf9b49db3b75dd9c478eb78995a224f552e6c583e3253fd466991311f9361e5dd",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd16c370e8fb75b377bc838b6e481aaab8b495dbcdeff21052f1bec1689581440",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x612003305e415487b497f9d891822d65aa1d333cbfe4fca2cb1053fc0d2855dd",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xe34df767ccea12f3e441d618319ee1527a79b4aefa49fa7f1fb77996fd32d0ad",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x14f759d2a8a3395f28b90ce02ca2f8be1d5cf95d346dadd976aed14e347f98aa",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x279b33c7a863a15a3ab4c831a1480b736e34895eec20a848cbb2efe9ae9c7003",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x8b5d61bf31dec81ab081588280b820de2d7447777eacbb6b768f352860011b17",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x51b700e1a9671b77f7acdb0d4871fcbc8efc7225bd76cc1a91bfe60767233538",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x683d0fe79b3c8fb1c62e3e8dccbe123510286e623dc3dbea48f7e6eba9ae0242",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xbef94cc7d47dbe68578ab01d137024c997e40e14dfff70802426c4a58166af95",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xb675fcd8c2376d42f5e36c529ad5b7cd7ebd6845d014a7233d480e2f5d8c99d0",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf55b0e61564c35d8834dbb9b62301c25f942c1aa102cf76aa1ecd80d76d5447e",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x29120777ed81be114d5b3c84a0b3ff037d9c5ef80cdb7edc1bb8a70c169e109c",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0f944889b8309d0e910d503be73c5ebdeb21c5a615deb51394b482344775451a",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3eb742321519b5c15a0dbd1c44a79d17f01dbdcc825b0f5d9a1dac4125eea07b",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x1e4c08eddea5cb99c87abeb3aae0c5a5c86c7bdc396e7c7aa8da1e55924e90da",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x58a91a98993782ccce59ef4ca4248ba72d244956e60a54480564f3d8a578f72c",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x9521bc24dd435f5fe0eca40ee797079a9ca1d6126205de6fed2a053c1e2232e3",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x1d5b4d5c92886219cc91f8e00f47d24e906808a64c5cf042ed8fd9da1efccacd",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5003fdddbe5efef020a5c17b3a5bac21ddbc0f4ec9ee6496d43abd3d75ba4422",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf940a63ef32c04ab6e0dc798faf41945b833cdf9cba05d8d99a96c89ef4a6927",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd7b2a63b8c5a702e2a4ea506f6f9dc16b4f3efdd84ef3ae9f6ecc82c3a384fe8",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd213d6a83475f10caa3acb75584d6a1fc5a276d79649b23bc9978881f6d1d73c",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc978c8b936735a4c91bea0602dd404051aa84b85c112e37b56f9b8cb8611fe6d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5d272443d5ca0ada1b6d040860a516053c7aaf475957729f7aa4fe82e98b7684",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd5b577624ac0d7abda555935aabb7484a344dd9be57f9eade673a5e010423bba",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x60569bc6556518725f43c79e0cccaaad44a18bda9d16507d7a51abf25e333262",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2a976553ea3e09007487f155e41699a95a4d0544edd0dcb78a2128e0dfd1ee86",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x824cb90e4497ebd758cb7105f09cd81cbc3f67056ff06b74ba9771a1ec6a80d8",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5cacbc87a5ec36cfc4f8ddef625bf2476504701aedb12a458f8c0480c54bfd55",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xe8bcfb5a8a26a4a8c78fa77b950facdb2b98cda17ae2f2a2284927d72632f946",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x11f07519137e4bfeccf70253f4e4d7b516f15dad58942ac16042ded434ce74b5",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd9ab80bcc7a0e397af1fc3661a88d5873cab1ddb4389cd6d90d0d09d65e2a18c",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x807f8847afbe98ff2fc40fc355dc022cba9e44adc44c9cf65e561c3599d9c879",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4cc570a1b359df9c22683d2c06742a3841342de6159de9357115b1109b7404b1",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3c1b59a97890e8f7c16d587ffe6c32722b0b6be327ddc5322b0acf233a93a695",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x9fbb1f53a267e14818020469a72dad39922f1f85266391c69e580717ff216316",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd0fb05794495095e50d85fc3b2af39c2daf317219b4382966ca42cb3ab74ff90",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x667dc6a3664c4baa3d2c6cf9621cf4b33ff46cae0272316587f12551e4b5e8b0",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7f11d5e5cc4d36e89c86d8a8a52a8a440464ec60528c11c5ff40b4229f129a6c",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x976654ba89f87a5b0db208ad3da6f1a960936f4472f64283c52ba6ebb0c1fafb",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x600ee240dca4d9a9adcce4ce6c28d2470c04a0833a835c5e234b5a206de54286",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xbd710cec32ccc03e4e16c273be660a40d4bc3c9afcdac6944e5eb0da1a259cab",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26139678); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7f8e8465aa9b093e883784bc38ebb4c9ade574d52a6b5aed3cabbefeb37fabf2",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x56d8b635a7c88fd1104d23d632af40c1c3aac4e3 from Nomad Bridge Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc4948f25809b6645a3d05987e8d6fb90789698ae8b4ea4af2a56c42ccb0582c7",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x56d8b635a7c88fd1104d23d632af40c1c3aac4e3 from Nomad Bridge Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x9d446d98125614c02438e65fa1dbd15e1478fe3b2490a6b843265332c54ddfa0",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x56d8b635a7c88fd1104d23d632af40c1c3aac4e3 from Nomad Bridge Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x497e6ad285bd85551a1b2dbeb4e9504bb10ff11f8e0325166e7e5241ee69b82a",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x56d8b635a7c88fd1104d23d632af40c1c3aac4e3 from Nomad Bridge Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa8b0aa42bfa2c142e6b4fb488e1d50c376ffd82b15329a67fdcba202b5f768e0",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb5c55f76f90cc528b2609109ca14d8d84593590e from Nomad Bridge Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xe798d825ac7f25736ec15116fc74bfd25fc942126de1bd68c9972bf4a9826cfd",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb5c55f76f90cc528b2609109ca14d8d84593590e from Nomad Bridge Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x8c475bff9d0d2f459a603a34c6cdb0a60406fbb8d46c2abbc165b64d9e5997f2",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb5c55f76f90cc528b2609109ca14d8d84593590e from Nomad Bridge Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc4938e6f6368061194d076d44f73a8cae3a318b1ee7cf8b026abe10b7c206c2a",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb5c55f76f90cc528b2609109ca14d8d84593590e from Nomad Bridge Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xfd8e6bad22affe5461ac78f316be782ad28bb975ff6f0942bbb983bb4a5f2a0b",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Nomad Bridge Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb5c55f76f90cc528b2609109ca14d8d84593590e from Nomad Bridge Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x93eadb28e6b50e7ed14348a14cfc3c9f09618dace9c20d3f39ab3d5828e3fd21",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Wintermute Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xe74b28c2eae8679e3ccc3a94d5d0de83ccb84705 from Wintermute Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0c08ed93837b426b7f884963c807c37f7b3cff1950acf75ddfd0bb255d86682a",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Wintermute Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xe74b28c2eae8679e3ccc3a94d5d0de83ccb84705 from Wintermute Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd1ffe25f4a34a0bc4d2c1957ec0fd59b9242e48ca467de7b1d968ed86739dbeb",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Wintermute Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xe74b28c2eae8679e3ccc3a94d5d0de83ccb84705 from Wintermute Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd7bf7b67e0d0095b7eb1813a4a60c129b45694374bf996f9ecc249d07efbcd02",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Wintermute Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xe74b28c2eae8679e3ccc3a94d5d0de83ccb84705 from Wintermute Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3cb358d40647e178ee5be25c2e16726b90ff2c17d34b64e013d8cf1c2c358967",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Beanstalk Farms Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x1c5dcdd006ea78a7e4783f9e6021c32935a10fb4 from Beanstalk Farms Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd19aa91b3928de0025049b3859709ca5a6fb3955ef58734cf6527c61b8a4253b",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Beanstalk Farms Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x1c5dcdd006ea78a7e4783f9e6021c32935a10fb4 from Beanstalk Farms Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd9c57ec0072571029fb1b0e89e87a49adf076df9471d21f90f7185fdfc7fa91d",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Beanstalk Farms Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x1c5dcdd006ea78a7e4783f9e6021c32935a10fb4 from Beanstalk Farms Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4263e8c6574b02f947f2a249d659a7f34e0ce190338b8b5fa5664f806f257b51",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Cream Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x70747df6ac244979a2ae9ca1e1a82899d02bbea4 from Cream Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x9461e2cd0b729647165620c61f54810adae442273c8dde7ee809e69b16bd1045",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Cream Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x70747df6ac244979a2ae9ca1e1a82899d02bbea4 from Cream Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xca2b8a6d7318df0b48d2fd814b0c539573f98a99fb4b3933ca2b326f2a40b7e7",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Cream Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x70747df6ac244979a2ae9ca1e1a82899d02bbea4 from Cream Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa4aa38c77420ba32a030d8a616f48be8117128795895e5b09c63cb63a1b340bb",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Cream Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x70747df6ac244979a2ae9ca1e1a82899d02bbea4 from Cream Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xbaf46762b68a40acccba3977ace7a076707d03fdd99eec9040ba4b26cca30851",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Cream Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x70747df6ac244979a2ae9ca1e1a82899d02bbea4 from Cream Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x32be972bef6302d42d83ef624765ffd962728912a5896ce7e5d2092ff009ae07",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb66cd966670d962c227b3eaba30a872dbfb995db from Euler Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5ebadd00d09c915ff0ef52a9329b614a806ee18e3d79b0d1c2e3d3322c14cad8",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb66cd966670d962c227b3eaba30a872dbfb995db from Euler Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x53f47eba4656a0713aea7f8ac67317bec43c04f3c7fa76ddf4a63e6e8d127213",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb66cd966670d962c227b3eaba30a872dbfb995db from Euler Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x48818f0721bd9e50527983f8cb4da1159b12c81831bbc5139dbcd7bbea1fbc0e",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb66cd966670d962c227b3eaba30a872dbfb995db from Euler Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x18ff530b9bd4bdf5ecefd281c22b70b7f39125bb825a9e39111793a27de8d6cd",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb66cd966670d962c227b3eaba30a872dbfb995db from Euler Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xdae809e4a1ddf77c39d44a4acfe6165bedbc19a385c4b241242cc9bd582a80b9",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xebc29199c817dc47ba12e3f86102564d640cbf99 from Euler Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x8f5ba8cf191bed032e487c95018b319428bb30b0cbe0a95a169269bffdd712c1",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x5f259d0b76665c337c6104145894f4d1d2758b8c from Euler Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xd8322ee1f41906017ffc913e945ed6f3794611b27efb30ad8a8ddb69f00b27fa",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Euler Finance Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x5f259d0b76665c337c6104145894f4d1d2758b8c from Euler Finance Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xda009677826e1aede19d4250885548fd5ea5de2d292d3f8de537ecdaea701f75",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x0fa09c3a328792253f8dee7116848723b72a6d2e from Bybit Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7dd94a2628e520b8711738554b279522e57963ce56394141888da783fcc1721a",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x0fa09c3a328792253f8dee7116848723b72a6d2e from Bybit Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x81e576039ef2c66223c47a3437c2751acc82b639ea5647b8fe151e04937955ca",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x0fa09c3a328792253f8dee7116848723b72a6d2e from Bybit Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3ce19c908d132fb5a71b88aa3d2a63d094855e05e64adc4a24f9827a186863cf",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x0fa09c3a328792253f8dee7116848723b72a6d2e from Bybit Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xb07447d55fd2d518a7726ec3e33ab5388e971db157440fca6fcf5916df3fca28",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Bybit Hack",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x0fa09c3a328792253f8dee7116848723b72a6d2e from Bybit Hack; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x87c83e4e85474e3fe2076751c24d0ea8ca2822057639a28ac10ca62b879c246f",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Curve Finance Vyper Reentrancy",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x6ec21d1868743a44318c3c259a6d4953f9978538 from Curve Finance Vyper Reentrancy; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x35bb0c11e609124636adfcbdbd0374801a4b63632c4b6eab88dd2efdbaf23afd",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Curve Finance Vyper Reentrancy",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x6ec21d1868743a44318c3c259a6d4953f9978538 from Curve Finance Vyper Reentrancy; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3a7c4ba5119729791470ed65b84821e1d0e1a7c333bd806b949c5837b5000abd",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Curve Finance Vyper Reentrancy",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0x6ec21d1868743a44318c3c259a6d4953f9978538 from Curve Finance Vyper Reentrancy; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x845d8c3dc6427629306c7f8bfe0f7c0531d1c8729a6449232b7e8b6f8ba9a846",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Curve Finance Vyper Reentrancy",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb752def3a1fded45d6c4b9f4a8f18e645b41b324 from Curve Finance Vyper Reentrancy; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x756cf2da292c3511735ee67e566bbf8209990724949852b2ee582a332e725b27",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Curve Finance Vyper Reentrancy",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb752def3a1fded45d6c4b9f4a8f18e645b41b324 from Curve Finance Vyper Reentrancy; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf8be92c6b81612f5329adc31f17a0c5586d76dcda55766b2d4660100838fd382",
+    "chain_id": 1,
+    "label": "malicious",
+    "incident": "Curve Finance Vyper Reentrancy",
+    "attack_type": "unknown",
+    "label_provenance": "Involves known attacker address 0xb752def3a1fded45d6c4b9f4a8f18e645b41b324 from Curve Finance Vyper Reentrancy; via alchemy_getAssetTransfers",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xbd59cad5bd4fd9f6793c4eef3aefe59958bdb95e5a502bd1abbc24d312a5b0ee",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7e3c74561687cbc1d0eafd6859465240f738cca2ec1b29308a4587183887a5f4",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x61b60742ef6d5150e8dc45f5ed33b74b130910aa69ec02047407c852e9ec4d37",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x1b8bf10cc85bd0ff352f7f5c881139624fde07c9336c7f0ae3f8b7795d6aa2bc",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x11057c4ca459ed656fd216df31480a2589b30e043e5e370bfc842c716aee2f88",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x102dea8e68d07d6114b46e3f9e77713be8168ef07337cdde76567aa7e9176e4c",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf1625edbdc6b6c633a598490c83085fbd244916d971e9f6234e0dcb7aea22623",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2785524aad5b914f9fe038f9d5b242f40fa9172f0c576c383843c95e783b003f",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x113bc8484826d8499adecd82460ea6c42619192513b93788360d248ff5c14c6a",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2ee77ad3eeba204520ca60d292c249d30cfa6be54715b2bf6c5bec75fbc5b897",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x65315430c4702d0b86c994dea6bc7e611a0c0582c05671fd0c0e39c19fc81f33",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3ea6fb518d9251fb48b175bb11e33df394e44f1c4a1eaddab46706507c000db6",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc276bd5ece0b86422e7b6224559be1a32db6cbad358c00489df82b769323e063",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x9b1e5df5d691d060eac34b3c2b3c5f406607f33fb296ed6345516c76cdbe6b87",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x8ef960f68c966f9dfba61f5f277e11ea4fd95bcccbdf5900193477639ed9303e",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x8132df8dc93c0726685bfc6cd230ec4428a0c854f3b5b000f0d4fee5d2d0a113",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x042fa78096ab52b289f9b6e995c218def23535fbbffdb38fdbccfce74419bd1d",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3c787e4f7aefe82145c5d1f674d921d65b11555ab86edd13b4eb30d0fff2c9b3",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xe3b40273ac025f8eee3223fdbd7c1419fd73bcd1ee5a0b6e9c4f061f140eecbb",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc6a1b10eab3c02dae3a65d992547ca745b2ef839dde56e506240e51f863ffc3e",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x6076e7c0a1b1186af47bbee9f8d4da9dd36cd4e1c1aa1a5838d53abcfd895342",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4dcfd96337eedf105d26a591f94b17c3377fbbdbb895c3c63227fd04cf04897e",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5796c8925aeb24888a80e87d2f4cca4c08f8c5e2985bb8e08aa4da93678007ab",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x51651a8b6394f97b9fbc001972f2714703e7449e91b06dc98bb49ae6e2cc2c87",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xb689e25ab366151243bb2cd2aa29d319894db559aecdfa692c9a1a036c6502e5",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xaa30f042f727fe6fc68611198b965ce609947b75967c3fc4a90ea25b9813e9da",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x5d1bd84c144dbf146980a8fa4e329ecfe1b9348d8239dc136c265855d73b7aa8",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf01067bc667db09c5b1438f5e5b99191a5b09ea383e2292dd9c784e7a4236c69",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x058cff8cd16dab151f1718b2d8d09410a3f310f6bf473f74fb41c60757924973",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0aea0b26a12b0fcedf01ff26e1034ccb07a34146c6d17d41df844f9649185455",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x6b5954a8f5bcb3b730f14dfdcb639b50852ae8f2875c85f536e0cbc233732dc7",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xfb6b14dfdb28a645443d235027202b8a6b3819c938ac6cfa5bc1046439f86fa2",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2b1e0acd7538bd693f7330f604b7293715446892611818f9fa0acf8df7d5270a",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x71352e7a697b2a64f7a38d4971c74f0b443a2c2010d1b97ec34bf5f658eec80a",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x1f021a9dd84af34760891cabc52ae8e0a09ff5235104441d9990e6e6ebde7b6a",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa594fab3c2ee1ea8672fa5a71793d7382aa487c2f1706dcb7ef26a57dfc21a60",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x7fb02a01b20f39c48d866c97bb62a8de8674f629cf8aa8caa7aff07a2533a832",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x459908748ccc8ca62f1168897008f6da1bc8b16f7a7535c3b65027cbc20dacdb",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x6b7c6fd948760c72aaf3453a48d1f6c9f49cbadf7ad1a9269a20eeb7b7632c25",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x019c48abe49d0fa16087ccaac979206f727c60548e9ec3c64094c28a1f0fbce7",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041303); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x69c79b44ae8c24a07abf747f628b974fb6993dae55338da0288d0ee63a635088",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x3a59a0e4ccd72354cde453479a0f11c0312beaa9f2bfdefddb2fd5d777cab882",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xdb17a4da64f21e23066af7b46c01f887fbfe37b33e49fbda50b883073a064ab3",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x51bab455823ae687fd71d75af413003eb11724f2eeaebff3417931045217f554",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xf5839303ba66c09d40668b0f9af52e5a80353e0fafd220e33ad1c928057a12d1",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x2e67281f41891141a48932df2053895c63ea44d1d2dc6caba1015d1601eb3982",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x0cdb3d78d80d60eac44303f9a101373b20eeaba925b513f6bef6537d2940ef23",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x64c83992e9fc454920f2b86710ec1a96bb5e99cfa467a74d35d40853e63f1c54",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x487a76da306c72ed2d978219d658e021a9a8db138f06ae59a0b29724a9bc6996",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x45b9f490a9c0985645e8993018ae28c5a8654cccc71702e98c9fd029d498c941",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x760bc013e31c2398c3b43f0c7b7bf4f2b2f2064bec07dc8c69214f7d8ff42dad",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa61a404416660e5b30d3bf8ef939e9f0ad2735fa668be80154e63c9969c0fafe",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xc18c05193dcc9fe43480427ca69adcd033f6cbf21421b6e0facd5b14d6460aff",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x654c84d7e76bc92454348e9abaa9527012d601310c8c7712ef2bb49ea4d70875",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa7c0e479ba90e9d84ef8ebec39b512ec0a0c8e43a57e6ca226b8505e1d676710",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x9a24173d07b33967ca66b86185aa8e8484b591ad88deafa0b5e5aef9e4dd6477",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x597f51e214bb6ede3cec19d4a630d8b9e567ecd69ff5435322162ab4c30cff8c",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x4339c0912e047509046fdc1edaefeaf78bfdc8ef5effdaa050c9fc04ac60fce3",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0x84898bcb94d3d22006d48db4a02f0c6f6ddd8a5a5ada1f8a09c6d3dff305f3c2",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  },
+  {
+    "tx_hash": "0xa14fa3bc2a81bc7897a345eee2dabcd841ab796112c644c999f90412388056b4",
+    "chain_id": 1,
+    "label": "benign",
+    "label_provenance": "usdc_transfer (block 26041304); not in any public incident report; assumed benign",
+    "rpc_url": ""
+  }
+]
