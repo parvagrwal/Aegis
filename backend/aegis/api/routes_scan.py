@@ -60,13 +60,13 @@ async def scan(req: ScanRequest):
             if result.get("verdict") == "malicious" and os.environ.get("DEFENDER_PRIVATE_KEY"):
                 def do_defense():
                     try:
-                        # Extract the spender from the effects
-                        for feat in result.get("features", []):
-                            if feat["id"] == "sim.large_value_transfer":
-                                data = feat.get("data", {})
-                                spender = data.get("spender")
-                                if spender:
-                                    revoke_approval(spender, "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", req.chain_id)
+                        # Extract the spender and token from the effects
+                        for eff in result.get("effects", []):
+                            if eff.get("kind") == "erc20_approval":
+                                spender = eff.get("to")
+                                token = eff.get("token")
+                                if spender and token:
+                                    revoke_approval(spender, token, req.chain_id)
                                     break
                     except Exception as e:
                         print(f"Defense failed: {e}")

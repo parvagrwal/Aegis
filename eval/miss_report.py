@@ -1,6 +1,6 @@
 import json
 
-with open("eval/results/run-final-intel/results.json") as f:
+with open("eval/results/run-final/results.json") as f:
     results = json.load(f).get("results", [])
 
 with open("eval/cases.json") as f:

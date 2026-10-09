@@ -10,7 +10,7 @@ class DefendQueue:
             "expires_at": time.time() + expires_in_ms / 1000.0,
             "status": "pending",
             "attempts": 0,
-            "code": "1234" # Dummy 2FA code for testing
+            "code": __import__("secrets").token_hex(3) # Cryptographically secure 2FA token
         }
         
     def get(self, action_id: str) -> dict:

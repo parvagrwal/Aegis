@@ -5,9 +5,10 @@ import VerdictMonolith from "./VerdictMonolith"
 import LiquidMeter from "./LiquidMeter"
 import ReasonTimeline from "./ReasonTimeline"
 import EvidenceScroll from "./EvidenceScroll"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 export default function ResultsPanel({ result, loading }: { result: ScanResult|null, loading:boolean }) {
+  const [aiResponse, setAiResponse] = useState("");
   useEffect(()=>{
     const c=!result ? "rgba(212,175,55,0.06)" : result.verdict==="malicious"?"rgba(255,26,94,0.10)": result.verdict==="uncertain"?"rgba(212,175,55,0.10)":"rgba(16,185,129,0.08)"
     document.documentElement.style.setProperty("--cursor-color", c)
@@ -59,7 +60,9 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                   }
                 }} className="mono text-[10px] text-sage hover:text-brass">🎙️ VOICE CONSOLE (STOP/START)</button>
             </div>
+            <div className="flex gap-2">
             <input 
+              id="aegis-nlp-input"
               placeholder="Ask why this was flagged and press Enter..."
               className="w-full h-9 px-2 bg-panel border border-line rounded mono text-xs text-cream focus:outline-none focus:border-brass disabled:opacity-50"
               onKeyDown={async (e) => {
@@ -70,7 +73,8 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                   input.value = "Analyzing context...";
                   input.disabled = true;
                   try {
-                     const res = await fetch("http://localhost:8000/api/v1/cases/" + result.payload.case_id + "/ask", {
+                     const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+                     const res = await fetch(backend + "/api/v1/cases/" + result.payload.case_id + "/ask", {
                        method: "POST",
                        headers: {"Content-Type": "application/json"},
                        body: JSON.stringify({ question: q, context: result })
@@ -85,7 +89,7 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                          spokenText = parts[1].trim();
                      }
                      
-                     alert("AEGIS AI:\\n\\n" + displayText);
+                     setAiResponse(displayText);
                      
                      // VOICE API
                      if (window.speechSynthesis.speaking) {
@@ -102,6 +106,30 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                 }
               }}
             />
+            <button 
+              className="h-9 px-3 bg-panel border border-line rounded mono text-xs text-sage hover:text-cream"
+              onClick={() => {
+                const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+                if (!SpeechRecognition) return alert("Speech recognition not supported in this browser.");
+                const recognition = new SpeechRecognition();
+                recognition.onresult = (event: any) => {
+                    const transcript = event.results[0][0].transcript;
+                    const input = document.getElementById("aegis-nlp-input") as HTMLInputElement;
+                    if (input) {
+                        input.value = transcript;
+                        // Trigger enter key simulation
+                        input.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter" }));
+                    }
+                };
+                recognition.start();
+              }}
+            >MIC</button>
+            </div>
+            {aiResponse && (
+                <div className="mt-3 p-3 bg-panel border border-line rounded mono text-xs text-cream/90 whitespace-pre-wrap break-words overflow-hidden">
+                    {aiResponse}
+                </div>
+            )}
         </div>
 
         <div className="mono text-[11px] text-sage/60 pt-3 border-t border-dashed border-line">

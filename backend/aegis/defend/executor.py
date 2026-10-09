@@ -1,4 +1,5 @@
 from aegis.defend.queue import DefendQueue
+from aegis.agent.tools import revoke_approval
 
 class Executor:
     def __init__(self, queue: DefendQueue):
@@ -15,5 +16,14 @@ class Executor:
         if item["status"] != "approved":
             raise PermissionError(f"Action cannot be executed. Status: {item['status']}")
             
+        # Agentic Action Execution
+        action = item.get("action", {})
+        if action.get("type") == "REVOKE_APPROVAL":
+            spender = action.get("spender")
+            token = action.get("token")
+            chain_id = action.get("chain_id", 1)
+            if spender and token:
+                revoke_approval(spender, token, chain_id)
+                
         item["status"] = "executed"
         return {"success": True}

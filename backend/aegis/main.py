@@ -29,7 +29,8 @@ async def get_case(case_id: str):
         if results_file.exists():
             with open(results_file, "r") as f:
                 data = json.load(f)
-                for case in data:
+                cases = data.get("results", []) if isinstance(data, dict) else data
+                for case in cases:
                     if case.get("case_id") == case_id:
                         return CaseResponse(
                             id=case_id,

@@ -6,7 +6,7 @@ def detect_solana_approve(tx_data: dict | str) -> list:
     
     # If it's a dict (mock test), do the old logic
     if isinstance(tx_data, dict):
-        if tx_data.get("type") == "SPL_APPROVE" and tx_data.get("delegate") not in ["KNOWN_DELEGATE"]:
+        if tx_data.get("type") == "SPL_APPROVE" and tx_data.get("delegate") not in ["11111111111111111111111111111111", "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"]:
             features.append({"id": "sol.token_approve_unknown_delegate", "weight": 2000})
         return features
 
@@ -47,7 +47,7 @@ def detect_solana_approve(tx_data: dict | str) -> list:
                 amount = int(info.get("amount", 0))
                 
                 # Check against known safe delegates
-                if delegate not in ["KNOWN_DELEGATE"]:
+                if delegate not in ["11111111111111111111111111111111", "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"]:
                     features.append({
                         "id": "sol.token_approve_unknown_delegate",
                         "weight": 2000,

@@ -66,5 +66,7 @@ cannot see.
 ## Methodology & Evaluation Rationale
 - **The $10M Threshold**: We set a hard threshold of $10M. Why? Because flagging a $10k transfer creates 10,000 false positives a day on Ethereum. Our system is designed for catastrophic protocol-level hacks. We refuse to tune the threshold downward just to catch the 3 missing edge cases, as that would ruin real-world precision.
 - **Benign Labels**: Our 260 benign transactions were selected from random blocks. They are labeled 'assumed benign' because they were not reported in any major incident databases (absence of evidence).
-- **False Positives**: Any feature tuning requires strict evaluation against the benign dataset to ensure we don't block legitimate MEV or complex DeFi routing.
+
+- **False Positives (21/260)**: Lowering the risk threshold to 2000 to catch 96.5% of attacks introduced 21 false positives. In a production defense system, these would trigger an analyst review rather than an automatic hard-block, prioritizing maximum attack recall.
+- **Feature Tuning**: Any feature tuning requires strict evaluation against the benign dataset to ensure we don't block legitimate MEV or complex DeFi routing.
 
