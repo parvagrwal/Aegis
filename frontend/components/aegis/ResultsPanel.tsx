@@ -43,9 +43,42 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
       <div className="p-4 md:p-5 space-y-5">
         <VerdictMonolith verdict={result.verdict} confidence={result.confidence} />
         <LiquidMeter value={result.confidence} />
-        <ReasonTimeline items={result.reasons} />
-        <div className="h-[1px] bg-line" />
+        <ReasonTimeline items={result.reasons} /><div className="h-[1px] bg-line" />
         <EvidenceScroll payload={result.payload} signature={result.signature} anchorTx={result.anchor_tx} />
+
+        {/* AI Analysis Block */}
+        <div className="mt-4 p-3 rounded bg-inset border border-line">
+            <div className="mono text-[11px] tracking-[0.16em] text-brass mb-2">AEGIS NLP ASSISTANT</div>
+            <input 
+              placeholder="Ask why this was flagged and press Enter..."
+              className="w-full h-9 px-2 bg-panel border border-line rounded mono text-xs text-cream focus:outline-none focus:border-brass disabled:opacity-50"
+              onKeyDown={async (e) => {
+                if(e.key === "Enter") {
+                  const input = e.currentTarget;
+                  const q = input.value;
+                  if(!q) return;
+                  input.value = "Analyzing context...";
+                  input.disabled = true;
+                  try {
+                     // Hit the FastAPI backend directly on port 8000
+                     const res = await fetch("http://localhost:8000/api/v1/cases/" + result.payload.case_id + "/ask", {
+                       method: "POST",
+                       headers: {"Content-Type": "application/json"},
+                       body: JSON.stringify({ question: q, context: result })
+                     });
+                     const data = await res.json();
+                     alert("AEGIS AI:\n\n" + data.answer);
+                  } catch(err) {
+                     alert("Error connecting to Aegis NLP API at localhost:8000. Is the backend running?");
+                  } finally {
+                     input.value = "";
+                     input.disabled = false;
+                  }
+                }
+              }}
+            />
+        </div>
+
         <div className="mono text-[11px] text-sage/60 pt-3 border-t border-dashed border-line">
           fetched in {(result.timings.fetched_ms/1000).toFixed(2)}s · decided in {(result.timings.decided_ms/1000).toFixed(2)}s
         </div>
