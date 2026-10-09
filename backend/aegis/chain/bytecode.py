@@ -8,8 +8,8 @@ async def get_bytecode(rpc: RpcClient, address: str, block: str | int = "latest"
 def is_sweeper(code: str) -> bool:
     if not code or code == "0x":
         return False
-    if len(code) > 3000: # WETH is larger, sweepers are usually small
+    if len(code) > 3000:
         return False
-    
-    clean_code = code.lower().replace("ffffffffffffffffffffffffffffffffffffffff", "")
-    return "ff" in clean_code
+    # Check for CALLER SELFDESTRUCT (33ff) or ADDRESS SELFDESTRUCT (30ff)
+    clean_code = code.lower()
+    return "33ff" in clean_code or "30ff" in clean_code

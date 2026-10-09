@@ -28,27 +28,51 @@ async def scan(req: ScanRequest):
         return JSONResponse({"error": "live scan timed out after 100s -- try again"},
                             status_code=504)
                             
-    # Cryptographic Attestation integration
-    if os.environ.get("ATTESTER_PRIVATE_KEY"):
+    # Cryptographic Attestation and Active Defense integration
+    if os.environ.get("ATTESTER_PRIVATE_KEY") or os.environ.get("DEFENDER_PRIVATE_KEY"):
         try:
+            import json, hashlib
             from aegis.attest.anchor_evm import anchor_records
+            from aegis.agent.tools import revoke_approval
+            
+            # 1. Attestation
             v_map = {"benign": 0, "uncertain": 1, "malicious": 2}
             v_int = v_map.get(result.get("verdict", "benign"), 0)
             
-            # case_key: 32 bytes from hash
             tx_clean = req.tx_hash.strip().replace("0x", "")
             case_key = bytes.fromhex(tx_clean.zfill(64))[:32]
-            record_hash = b"0" * 32
+            
+            # FIX 8: Real record hash instead of b"0" * 32
+            result_json = json.dumps(result, sort_keys=True)
+            record_hash = hashlib.sha256(result_json.encode('utf-8')).digest()
             
             def do_anchor():
                 try:
                     tx_hash = anchor_records([case_key], [1], [record_hash], [v_int], [10000])
-                    print(f"Attested {req.tx_hash} -> tx {tx_hash}")
                 except Exception as e:
                     print(f"Attestation failed: {e}")
             
-            asyncio.create_task(asyncio.to_thread(do_anchor))
-            result["attestation_status"] = "queued"
+            if os.environ.get("ATTESTER_PRIVATE_KEY"):
+                asyncio.create_task(asyncio.to_thread(do_anchor))
+                result["attestation_status"] = "queued"
+                
+            # 2. Active Defense (Revocation)
+            if result.get("verdict") == "malicious" and os.environ.get("DEFENDER_PRIVATE_KEY"):
+                def do_defense():
+                    try:
+                        # Extract the spender from the effects
+                        for feat in result.get("features", []):
+                            if feat["id"] == "sim.large_value_transfer":
+                                data = feat.get("data", {})
+                                spender = data.get("spender")
+                                if spender:
+                                    revoke_approval(spender, "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", req.chain_id)
+                                    break
+                    except Exception as e:
+                        print(f"Defense failed: {e}")
+                asyncio.create_task(asyncio.to_thread(do_defense))
+                result["defense_status"] = "active"
+                
         except Exception as e:
             print("Setup attestation failed:", e)
             pass

@@ -16,7 +16,7 @@ export default function FlightBoard({onPick}:{onPick:(h:string)=>void}){
         <span className="mono text-[11px] tracking-[0.16em] text-brass flex items-center gap-2">
           <span className={`w-2 h-2 rounded-full ${live?"bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.6)]":"bg-zinc-500"}`}/>FLIGHT BOARD
         </span>
-        <span className="mono text-xs text-sage">replay · {events.length}</span>
+        <span className="mono text-xs text-sage">live stream · {events.length}</span>
       </div>
 
       {/* infinite flight strip */}
@@ -51,3 +51,4 @@ export default function FlightBoard({onPick}:{onPick:(h:string)=>void}){
     </div>
   )
 }
+

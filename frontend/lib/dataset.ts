@@ -124,7 +124,7 @@ export function toScanResult(r: any): ScanResult {
       decided_ms: Math.round((timings.t_pipeline_s || 0) * 1000),
     },
     features,
-    intel: [],
+    intel: r.features ? r.features.filter((f: any) => f === "intel.label_malicious" || (f.id && f.id.startsWith("intel"))) : [],
     risk: r.risk,
     incident: meta?.incident,
     label: meta?.label,

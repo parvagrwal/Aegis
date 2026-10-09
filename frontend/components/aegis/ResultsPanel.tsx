@@ -48,7 +48,46 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
 
         {/* AI Analysis Block */}
         <div className="mt-4 p-3 rounded bg-inset border border-line">
-            <div className="mono text-[11px] tracking-[0.16em] text-brass mb-2">AEGIS NLP ASSISTANT</div>
+            <div className="flex justify-between items-center mb-2">
+                <div className="mono text-[11px] tracking-[0.16em] text-brass">AEGIS NLP ASSISTANT</div>
+                <button onClick={() => {
+                  const u = new SpeechSynthesisUtterance("Aegis voice console activated.");
+                  window.speechSynthesis.speak(u);
+                }} className="mono text-[10px] text-sage hover:text-brass">??? VOICE CONSOLE</button>
+            </div>
+            <input 
+              placeholder="Ask why this was flagged and press Enter..."
+              className="w-full h-9 px-2 bg-panel border border-line rounded mono text-xs text-cream focus:outline-none focus:border-brass disabled:opacity-50"
+              onKeyDown={async (e) => {
+                if(e.key === "Enter") {
+                  const input = e.currentTarget;
+                  const q = input.value;
+                  if(!q) return;
+                  input.value = "Analyzing context...";
+                  input.disabled = true;
+                  try {
+                     const res = await fetch("http://localhost:8000/api/v1/cases/" + result.payload.case_id + "/ask", {
+                       method: "POST",
+                       headers: {"Content-Type": "application/json"},
+                       body: JSON.stringify({ question: q, context: result })
+                     });
+                     const data = await res.json();
+                     alert("AEGIS AI:
+
+" + data.answer);
+                     // VOICE API
+                     const u = new SpeechSynthesisUtterance(data.answer);
+                     window.speechSynthesis.speak(u);
+                  } catch(err) {
+                     alert("Error connecting to Aegis NLP API at localhost:8000. Is the backend running?");
+                  } finally {
+                     input.value = "";
+                     input.disabled = false;
+                  }
+                }
+              }}
+            />
+        </div>
             <input 
               placeholder="Ask why this was flagged and press Enter..."
               className="w-full h-9 px-2 bg-panel border border-line rounded mono text-xs text-cream focus:outline-none focus:border-brass disabled:opacity-50"

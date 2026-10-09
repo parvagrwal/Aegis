@@ -191,7 +191,7 @@ def extract_features(ctx: CaseContext) -> list[Feature]:
                 token_amounts[token] = token_amounts.get(token, 0) + amount
             
     # Calculate Native ETH USD
-    eth_price, _ = get_token_price_and_decimals("eth_price")
+    eth_price, _ = get_token_price_and_decimals("0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
     if eth_price == 0.0:
         eth_price = 2500.0 # Strict fallback
     total_usd += (native_eth_amount / (10 ** 18)) * eth_price

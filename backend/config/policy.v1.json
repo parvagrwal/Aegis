@@ -15,9 +15,9 @@
   },
   "bands": {
     "risk": {
-      "ELEVATED": 2000,
-      "HIGH": 5000,
-      "CRITICAL": 8500
+      "ELEVATED": 1000,
+      "HIGH": 2000,
+      "CRITICAL": 5000
     },
     "confidence": {
       "MEDIUM": 7000,
