@@ -57,7 +57,7 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                     const u = new SpeechSynthesisUtterance("Aegis voice console ready. Ask a question to begin.");
                     window.speechSynthesis.speak(u);
                   }
-                }} className="mono text-[10px] text-sage hover:text-brass">??? VOICE CONSOLE (STOP/START)</button>
+                }} className="mono text-[10px] text-sage hover:text-brass">🎙️ VOICE CONSOLE (STOP/START)</button>
             </div>
             <input 
               placeholder="Ask why this was flagged and press Enter..."
@@ -85,51 +85,13 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                          spokenText = parts[1].trim();
                      }
                      
-                     alert("AEGIS AI:
-
-" + displayText);
+                     alert("AEGIS AI:\\n\\n" + displayText);
                      
                      // VOICE API
                      if (window.speechSynthesis.speaking) {
                          window.speechSynthesis.cancel();
                      }
                      const u = new SpeechSynthesisUtterance(spokenText);
-                     window.speechSynthesis.speak(u);
-                  } catch(err) {
-                     alert("Error connecting to Aegis NLP API at localhost:8000. Is the backend running?");
-                  } finally {
-                     input.value = "";
-                     input.disabled = false;
-                  }
-                }
-              }}
-            />
-        </div>
-                <button onClick={() => {
-                  const u = new SpeechSynthesisUtterance("Aegis voice console activated.");
-                  window.speechSynthesis.speak(u);
-                }} className="mono text-[10px] text-sage hover:text-brass">🎙️ VOICE CONSOLE</button>
-            </div>
-            <input 
-              placeholder="Ask why this was flagged and press Enter..."
-              className="w-full h-9 px-2 bg-panel border border-line rounded mono text-xs text-cream focus:outline-none focus:border-brass disabled:opacity-50"
-              onKeyDown={async (e) => {
-                if(e.key === "Enter") {
-                  const input = e.currentTarget;
-                  const q = input.value;
-                  if(!q) return;
-                  input.value = "Analyzing context...";
-                  input.disabled = true;
-                  try {
-                     const res = await fetch("http://localhost:8000/api/v1/cases/" + result.payload.case_id + "/ask", {
-                       method: "POST",
-                       headers: {"Content-Type": "application/json"},
-                       body: JSON.stringify({ question: q, context: result })
-                     });
-                     const data = await res.json();
-                     alert("AEGIS AI:\\n\\n" + data.answer);
-                     // VOICE API
-                     const u = new SpeechSynthesisUtterance(data.answer);
                      window.speechSynthesis.speak(u);
                   } catch(err) {
                      alert("Error connecting to Aegis NLP API at localhost:8000. Is the backend running?");
