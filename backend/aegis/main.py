@@ -70,7 +70,7 @@ async def ask_case(case_id: str, req: AskRequest):
         payload = {
             "model": model,
             "messages": [
-                {"role": "system", "content": "You are Aegis AI, an elite blockchain security assistant. You are given a JSON dump of a blockchain transaction analysis (features extracted, risk score, labels, verdicts). Use this data to directly answer the user's questions about how the hack occurred, what addresses were involved, and why it was flagged. Be highly specific using the data provided."},
+                {"role": "system", "content": "You are Aegis AI, an elite blockchain security assistant. You are given a JSON dump of a blockchain transaction analysis (features extracted, risk score, labels, verdicts). Use this data to directly answer the user's questions about how the hack occurred, what addresses were involved, and why it was flagged. Be highly specific using the data provided. IMPORTANT: At the very end of your response, add a new line starting with 'VOICE_SUMMARY:' followed by a 2-3 crisp sentence conversational summary in simple relevant English."},
                 {"role": "user", "content": "Context:\\n" + ctx_str + "\\n\\nQuestion: " + req.question + "\\n\\nExplain this based purely on the provided context."}
             ]
         }
