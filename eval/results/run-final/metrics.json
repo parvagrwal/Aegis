@@ -1,8 +1,15 @@
 {
   "total": 374,
+  "runnable": 374,
+  "unrunnable": 0,
   "decided": 256,
   "correct": 231,
   "uncertain": 118,
-  "accuracy": 0.90234375,
-  "timestamp": "2026-10-09T18:45:03.731350+00:00Z"
+  "accuracy_decisive": 0.90234375,
+  "accuracy_overall": 0.6176470588235294,
+  "provenance": {
+    "timestamp": "2026-10-09T19:11:36.027497Z",
+    "policy_version": "v1",
+    "rpc_host": "alchemy-mainnet"
+  }
 }

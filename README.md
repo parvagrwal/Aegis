@@ -26,7 +26,7 @@ uvicorn backend.aegis.main:app --port 8000
 
 **What the harness measures.** eval/harness.py fetches each case's real transaction from chain over JSON-RPC and runs the full pipeline -- decode -> effects -> features -> policy engine -> verdict -- recording per-case timings. Cases that cannot be fetched are marked **unrunnable** and excluded from accuracy. No mock data, ever.
 
-**Current state: 90.2% decisive accuracy.** We achieved 90.2% decisive accuracy (and 66.2% overall accuracy, with 120 uncertain cases) on 374 real-world cases. This was achieved via:
+**Current state: 90.2% decisive accuracy.** We achieved 90.2% decisive accuracy (and 61.8% overall accuracy, with 118 uncertain cases) on 374 real-world cases. This was achieved via:
 
 1. **sim.large_value_transfer**: A pure value-movement heuristic that aggregates both native ETH (	x.value and 
 ative_transfer effects) and ERC20 token transfers, calculating real-time USD equivalent via CoinGecko. Transactions moving more than $10M strictly trigger a +2500 weight (ELEVATED).
@@ -64,6 +64,6 @@ cannot see.
 
 
 ## Methodology & Evaluation Rationale
-- **Risk Thresholds**: We tuned the risk bands downward to catch 96.5% of malicious attacks (110/114), willingly trading off some precision (21 false positives) because in a defense context, missing an attack is fatal, while a false positive just queues a manual analyst review.
+- **Risk Thresholds**: We tuned the risk bands downward to catch 96.5% of malicious attacks (110/114), willingly trading off some precision (21 false positives) because in a defense context, missing an attack is fatal, while a false positive just queues a manual analyst review. See [eval/ERRORS.md](eval/ERRORS.md) for the complete ledger of all 25 decisive errors.
 - **Benign Labels**: Our 260 benign transactions were selected from random blocks. They are labeled 'assumed benign' because they were not reported in any major incident databases (absence of evidence).
 - **Feature Tuning**: Any feature tuning requires strict evaluation against the benign dataset to ensure we don't block legitimate MEV or complex DeFi routing.
