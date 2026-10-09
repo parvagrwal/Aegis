@@ -7,7 +7,10 @@ class Memory:
         self.fingerprints = {}
         
     def add_anchor(self, case_id: str, anchor_data: dict):
-        pass
+        self.fingerprints[case_id] = anchor_data
+        for k, v in anchor_data.items():
+            if k == "attacker" or k == "to":
+                self.clusters[v] = "malicious_cluster"
         
     def compute_similarity(self, fp1: str, fp2: str) -> float:
         # Simple jaccard or exact match for now

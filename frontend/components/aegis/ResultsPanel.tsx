@@ -58,7 +58,7 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                     const u = new SpeechSynthesisUtterance("Aegis voice console ready. Ask a question to begin.");
                     window.speechSynthesis.speak(u);
                   }
-                }} className="mono text-[10px] text-sage hover:text-brass">🎙️ VOICE CONSOLE (STOP/START)</button>
+                }} className="mono text-[10px] text-sage hover:text-brass">MIC VOICE CONSOLE (STOP/START)</button>
             </div>
             <div className="flex gap-2">
             <input 
@@ -112,13 +112,46 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                 const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
                 if (!SpeechRecognition) return alert("Speech recognition not supported in this browser.");
                 const recognition = new SpeechRecognition();
-                recognition.onresult = (event: any) => {
+                recognition.onresult = async (event: any) => {
                     const transcript = event.results[0][0].transcript;
                     const input = document.getElementById("aegis-nlp-input") as HTMLInputElement;
                     if (input) {
                         input.value = transcript;
-                        // Trigger enter key simulation
-                        input.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter" }));
+                        // Execute the same logic manually since dispatchEvent fails React's synthetic system
+                        const q = transcript;
+                        if(!q) return;
+                        input.value = "Analyzing context...";
+                        input.disabled = true;
+                        try {
+                           const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+                           const res = await fetch(backend + "/api/v1/cases/" + result.payload.case_id + "/ask", {
+                             method: "POST",
+                             headers: {"Content-Type": "application/json"},
+                             body: JSON.stringify({ question: q, context: result })
+                           });
+                           const data = await res.json();
+                           
+                           let displayText = data.answer;
+                           let spokenText = data.answer;
+                           if (data.answer.includes("VOICE_SUMMARY:")) {
+                               const parts = data.answer.split("VOICE_SUMMARY:");
+                               displayText = parts[0].trim();
+                               spokenText = parts[1].trim();
+                           }
+                           
+                           setAiResponse(displayText);
+                           
+                           if (window.speechSynthesis.speaking) {
+                               window.speechSynthesis.cancel();
+                           }
+                           const u = new SpeechSynthesisUtterance(spokenText);
+                           window.speechSynthesis.speak(u);
+                        } catch(err) {
+                           alert("Error connecting to Aegis NLP API at localhost:8000. Is the backend running?");
+                        } finally {
+                           input.value = "";
+                           input.disabled = false;
+                        }
                     }
                 };
                 recognition.start();

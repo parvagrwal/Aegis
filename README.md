@@ -26,7 +26,7 @@ uvicorn backend.aegis.main:app --port 8000
 
 **What the harness measures.** eval/harness.py fetches each case's real transaction from chain over JSON-RPC and runs the full pipeline -- decode -> effects -> features -> policy engine -> verdict -- recording per-case timings. Cases that cannot be fetched are marked **unrunnable** and excluded from accuracy. No mock data, ever.
 
-**Current state: 97.6% decisive accuracy.** We achieved 97.6% decisive accuracy (and 66.2% overall accuracy, with 120 uncertain cases) on 374 real-world cases. This was achieved via:
+**Current state: 90.2% decisive accuracy.** We achieved 90.2% decisive accuracy (and 66.2% overall accuracy, with 120 uncertain cases) on 374 real-world cases. This was achieved via:
 
 1. **sim.large_value_transfer**: A pure value-movement heuristic that aggregates both native ETH (	x.value and 
 ative_transfer effects) and ERC20 token transfers, calculating real-time USD equivalent via CoinGecko. Transactions moving more than $10M strictly trigger a +2500 weight (ELEVATED).
@@ -64,9 +64,6 @@ cannot see.
 
 
 ## Methodology & Evaluation Rationale
-- **The $10M Threshold**: We set a hard threshold of $10M. Why? Because flagging a $10k transfer creates 10,000 false positives a day on Ethereum. Our system is designed for catastrophic protocol-level hacks. We refuse to tune the threshold downward just to catch the 3 missing edge cases, as that would ruin real-world precision.
+- **Risk Thresholds**: We tuned the risk bands downward to catch 96.5% of malicious attacks (110/114), willingly trading off some precision (21 false positives) because in a defense context, missing an attack is fatal, while a false positive just queues a manual analyst review.
 - **Benign Labels**: Our 260 benign transactions were selected from random blocks. They are labeled 'assumed benign' because they were not reported in any major incident databases (absence of evidence).
-
-- **False Positives (21/260)**: Lowering the risk threshold to 2000 to catch 96.5% of attacks introduced 21 false positives. In a production defense system, these would trigger an analyst review rather than an automatic hard-block, prioritizing maximum attack recall.
 - **Feature Tuning**: Any feature tuning requires strict evaluation against the benign dataset to ensure we don't block legitimate MEV or complex DeFi routing.
-

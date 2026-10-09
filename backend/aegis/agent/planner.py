@@ -4,7 +4,7 @@ import json
 import httpx
 
 async def plan(context_data: dict = None, sleep_time=0.0):
-    await asyncio.sleep(sleep_time)
+    
     
     if not context_data:
         return {"status": "decided", "actions": []}
@@ -13,7 +13,7 @@ async def plan(context_data: dict = None, sleep_time=0.0):
     if not api_key:
         return {"status": "decided", "actions": []}
         
-    prompt = "You are Aegis Agent Planner. Given this JSON transaction context, output ONLY a JSON array of required defense actions. For example: [{"type": "REVOKE_APPROVAL", "spender": "0x...", "token": "0x...", "chain_id": 1}]. If no defense is needed, output []."
+    prompt = "You are Aegis Agent Planner. Given this JSON transaction context, output ONLY a JSON object with an "actions" key containing an array of required defense actions. For example: {"actions": [{"type": "REVOKE_APPROVAL", "spender": "0x...", "token": "0x...", "chain_id": 1}]}. If no defense is needed, output {"actions": []}."
     
     payload = {
         "model": "llama-3.1-70b-versatile",

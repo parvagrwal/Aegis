@@ -66,7 +66,7 @@ async def scan(req: ScanRequest):
                                 spender = eff.get("to")
                                 token = eff.get("token")
                                 if spender and token:
-                                    revoke_approval(spender, token, req.chain_id)
+                                    revoke_approval("defender", req.chain_id, token, spender)
                                     break
                     except Exception as e:
                         print(f"Defense failed: {e}")

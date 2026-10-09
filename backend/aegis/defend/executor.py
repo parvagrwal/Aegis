@@ -23,7 +23,7 @@ class Executor:
             token = action.get("token")
             chain_id = action.get("chain_id", 1)
             if spender and token:
-                revoke_approval(spender, token, chain_id)
+                revoke_approval("defender", chain_id, token, spender)
                 
         item["status"] = "executed"
         return {"success": True}
