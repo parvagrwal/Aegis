@@ -216,6 +216,11 @@ async def _live_scan_inner(tx_hash: str, chain_id: int) -> dict:
         verdict = "malicious" if risk in ("HIGH", "CRITICAL") \
             else "uncertain" if risk == "ELEVATED" else "benign"
 
+        from aegis.policy.rules import decide
+        from aegis.detect.explain import explain_features
+        rule_id = decide("FIREHOSE", risk, "high", True, "none")
+        reasons = explain_features(res["features"])
+        
         return {
             "case_id": tx_hash,
             "chain": str(chain_id),
@@ -224,6 +229,10 @@ async def _live_scan_inner(tx_hash: str, chain_id: int) -> dict:
             "status": "runnable",
             "verdict": verdict,
             "risk": risk,
+            "rule_id": rule_id,
+            "reasons": reasons,
+
+
             "score": res["score"],
             "calibrated_score": res.get("calibrated_score"),
             "temperature": res.get("temperature"),

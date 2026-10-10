@@ -224,6 +224,9 @@ async def evaluate_case(rpc: RpcClient, explorer: ExplorerClient, case: dict) ->
     else:
         verdict = "benign"
 
+    from aegis.policy.rules import decide
+    rule_id = decide("FIREHOSE", res["risk"], "high", True, "none")
+    
     return {
         "case_id": case.get("case_id") or case.get("tx_hash"),
         "chain": case.get("chain"),
@@ -234,6 +237,8 @@ async def evaluate_case(rpc: RpcClient, explorer: ExplorerClient, case: dict) ->
         "verdict": verdict,
         "correct": verdict == case.get("label"),
         "risk": res["risk"],
+        "rule_id": rule_id,
+
         "score": res["score"],
         "calibrated_score": res.get("calibrated_score"),
         "temperature": res.get("temperature"),

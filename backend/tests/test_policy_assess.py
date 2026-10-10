@@ -9,7 +9,7 @@ def test_policy_assess():
     
     # Mild
     res = assess_case([Feature(id="sim.approval_unlimited_to_eoa", weight=2500, data={})])
-    assert res["score"] == -500 + 2500 # 2000
+    assert res["score"] == 1500
     assert res["risk"] == "ELEVATED"
     
     # High

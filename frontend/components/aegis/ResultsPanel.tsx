@@ -109,6 +109,52 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
         </div>
 
 
+        
+        {/* Attacker Network (Phase 4) */}
+        <div className="mt-4 p-3 rounded bg-inset border border-line">
+            <div className="flex justify-between items-center mb-2">
+                <div className="mono text-[11px] tracking-[0.16em] text-brass">ATTACKER NETWORK CLUSTERS</div>
+                <button onClick={async (e) => {
+                  const btn = e.currentTarget;
+                    btn.disabled = true;
+                    btn.innerText = "LOADING...";
+                  try {
+                     const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+                     const res = await fetch(backend + "/api/v1/clusters");
+                     const data = await res.json();
+                     const out = document.getElementById("clusters-output");
+                     if(out) {
+                         let html = "";
+                         data.forEach((c: any, i: number) => {
+                             html += "<div class='mt-2 pb-2 border-b border-dashed border-line last:border-0'>";
+                             html += "<div class='text-cream font-bold'>Cluster " + (i+1) + " (" + c.members.length + " attackers)</div>";
+                             html += "<div class='text-sage mt-1 mb-1'>Members:</div>";
+                             c.members.forEach((m: string) => {
+                                 html += "<div class='text-[10px] text-[rgba(255,26,94,0.8)] truncate'>- " + m + "</div>";
+                             });
+                             html += "<div class='text-sage mt-2 mb-1'>Shared Infrastructure:</div>";
+                             c.shared_counterparties.forEach((sc: string) => {
+                                 html += "<div class='text-[10px] truncate'>- " + sc + "</div>";
+                             });
+                             html += "</div>";
+                         });
+                         if(data.length === 0) html = "<div class='text-sage'>No clusters generated.</div>";
+                         out.innerHTML = html;
+                     }
+                  } catch(err) {
+                     const out = document.getElementById("clusters-output");
+                     if(out) out.innerHTML = "<span class='text-[#ff1a5e]'>Error fetching clusters.</span>";
+                  } finally {
+                      btn.innerText = "LOAD CLUSTERS";
+                      btn.disabled = false;
+                    }
+                }} className="mono text-[10px] bg-line text-cream hover:text-brass px-2 py-1 rounded">LOAD CLUSTERS</button>
+            </div>
+            <div id="clusters-output" className="mono text-[11px] text-sage break-words max-h-40 overflow-y-auto">
+                Discover shared infrastructure between known attackers via deterministic RPC graph analysis.
+            </div>
+        </div>
+
         {/* AI Analysis Block */}
         <div className="mt-4 p-3 rounded bg-inset border border-line">
             <div className="flex justify-between items-center mb-2">

@@ -11,7 +11,7 @@ app = FastAPI(title="Aegis API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -65,6 +65,19 @@ class VerifyResponse(BaseModel):
     error: Optional[str] = None
 
 
+@app.get("/api/v1/clusters")
+async def get_clusters():
+    import json
+    from pathlib import Path
+    try:
+        p = Path(__file__).parent / "detect" / "infra_clusters.json"
+        if p.exists():
+            with open(p, "r") as f:
+                return json.load(f)
+    except Exception:
+        pass
+    return []
+
 @app.post("/api/v1/cases/{case_id}/verify", response_model=VerifyResponse)
 async def verify_case(case_id: str, req: AskRequest):
     # We reuse AskRequest since it conveniently contains context which has the local_result
@@ -74,35 +87,10 @@ async def verify_case(case_id: str, req: AskRequest):
 
 @app.post("/api/v1/cases/{case_id}/ask", response_model=AskResponse)
 async def ask_case(case_id: str, req: AskRequest):
-    import os, httpx, json
-    api_key = os.environ.get("GROQ_API_KEY")
-    if not api_key:
-        return AskResponse(answer="LLM not configured (missing GROQ_API_KEY).", citations=[])
-    
+    from aegis.agent.narrator import Narrator
+    narrator = Narrator()
     try:
-        model = os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b")
-        url = "https://api.groq.com/openai/v1/chat/completions"
-        
-        # Build prompt using the passed context
-        import json
-        ctx_str = json.dumps(req.context, indent=2) if req.context else f"Incident {case_id}"
-        
-        payload = {
-            "model": model,
-            "messages": [
-                {"role": "system", "content": "You are Aegis AI, an elite blockchain security assistant. You are given a JSON dump of a blockchain transaction analysis (features extracted, risk score, labels, verdicts). Use this data to directly answer the user's questions about how the hack occurred, what addresses were involved, and why it was flagged. Be highly specific using the data provided. IMPORTANT: At the very end of your response, add a new line starting with 'VOICE_SUMMARY:' followed by a 2-3 crisp sentence conversational summary in simple relevant English."},
-                {"role": "user", "content": "Context:\\n" + ctx_str + "\\n\\nQuestion: " + req.question + "\\n\\nExplain this based purely on the provided context."}
-            ]
-        }
-        headers = {
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json"
-        }
-        async with httpx.AsyncClient() as client:
-            r = await client.post(url, json=payload, headers=headers, timeout=25.0)
-            r.raise_for_status()
-            data = r.json()
-            answer_text = data["choices"][0]["message"]["content"]
+        answer_text = await narrator.explain(req.context, req.question)
     except Exception as e:
         answer_text = f"LLM Error: {str(e)}"
 

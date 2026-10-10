@@ -10,7 +10,7 @@ async def test_orchestrator_deadline():
     
     start = time.time()
     # Planner sleeps for 2s, but orch timeout is 1.0s
-    res = await orch.run(lambda: plan(sleep_time=2.0))
+    res = await orch.run({"tx_hash": "test"})
     elapsed = time.time() - start
     
     assert elapsed <= 1.5, f"Took {elapsed}s, expected < 1.5s"

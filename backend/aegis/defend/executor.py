@@ -24,7 +24,7 @@ class Executor:
             token = action.get("token")
             chain_id = action.get("chain_id", 1)
             if spender and token:
-                res = revoke_approval("defender", chain_id, token, spender)
+                res = revoke_approval("executor", chain_id, token, spender)
                 tx_hash = res.get("tx_hash")
                 
         self.queue.set_status(action_id, "executed", tx_hash)

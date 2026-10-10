@@ -1,7 +1,7 @@
 {
   "provenance": {
     "generated_by": "eval/harness.py",
-    "generated_at": "2026-10-08T07:43:44.122836+00:00",
+    "generated_at": "2026-10-10T08:18:28.057217+00:00",
     "policy_version": "policy.v1",
     "rpc_host": "multiple (mainnet, sepolia)",
     "cases_total": 374,

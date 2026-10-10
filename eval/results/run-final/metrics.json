@@ -1,15 +1,22 @@
 {
   "total": 374,
-  "runnable": 374,
-  "unrunnable": 0,
-  "decided": 256,
+  "runnable": 373,
+  "unrunnable": 1,
+  "uncertain_count": 118,
+  "uncertain_rate": 0.3163538873994638,
   "correct": 231,
-  "uncertain": 118,
-  "accuracy_decisive": 0.90234375,
-  "accuracy_overall": 0.6176470588235294,
+  "accuracy": 0.6193029490616622,
+  "accuracy_decisive": 0.9058823529411765,
+  "accuracy_basis": "runnable cases only",
   "provenance": {
-    "timestamp": "2026-10-09T19:11:36.027497Z",
-    "policy_version": "v1",
-    "rpc_host": "alchemy-mainnet"
+    "generated_by": "eval/harness.py",
+    "generated_at": "2026-10-10T08:18:28.057217+00:00",
+    "policy_version": "policy.v1",
+    "rpc_host": "multiple (mainnet, sepolia)",
+    "cases_total": 374,
+    "runnable": 373,
+    "unrunnable": 1,
+    "accuracy_basis": "runnable cases only \u2014 unrunnable cases are excluded, never guessed",
+    "note": "No mock data. Every runnable case was fetched from chain and run through decode -> effects -> features -> policy engine."
   }
 }

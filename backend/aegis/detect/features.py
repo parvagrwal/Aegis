@@ -159,6 +159,32 @@ def extract_features(ctx: CaseContext) -> list[Feature]:
             features.append(Feature(id="code.sweeper_pattern", weight=3000, data={"contract": beneficiary}))
             
     # Intel features
+    
+    # 1. Load infra clusters (best effort)
+    infra_clusters = []
+    try:
+        from pathlib import Path
+        p = Path(__file__).parent / "infra_clusters.json"
+        if p.exists():
+            with open(p, "r") as f:
+                infra_clusters = json.load(f)
+    except Exception:
+        pass
+        
+    involved = set(ctx.labels.keys())
+    
+    # Check infra feature
+    infra_hit = False
+    for cluster in infra_clusters:
+        members = set(cluster.get("members", []))
+        shared = set(cluster.get("shared_counterparties", []))
+        
+        # If any involved address is a member OR a shared link of the cluster
+        if involved.intersection(members) or involved.intersection(shared):
+            features.append(Feature(id="infra.shared_attacker_infrastructure", weight=1500, data={"cluster_size": len(members)}))
+            infra_hit = True
+            break
+            
     for addr, ldata in ctx.labels.items():
         if ldata and "malicious" in ldata.get("labels", []):
             features.append(Feature(id="intel.label_malicious", weight=2500, data={"address": addr}))

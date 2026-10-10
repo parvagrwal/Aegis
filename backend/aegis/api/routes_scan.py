@@ -56,21 +56,22 @@ async def scan(req: ScanRequest):
                 asyncio.create_task(asyncio.to_thread(do_anchor))
                 result["attestation_status"] = "queued"
                 
-            # 2. Active Defense (Revocation)
+# 2. Active Defense (Revocation)
             if result.get("verdict") == "malicious" and os.environ.get("DEFENDER_PRIVATE_KEY"):
-                def do_defense():
+                from aegis.agent.orchestrator import Orchestrator
+                
+                event_context = result.copy()
+                event_context["chain_id"] = req.chain_id
+                
+                async def do_defense():
                     try:
-                        # Extract the spender and token from the effects
-                        for eff in result.get("effects", []):
-                            if eff.get("kind") == "erc20_approval":
-                                spender = eff.get("to")
-                                token = eff.get("token")
-                                if spender and token:
-                                    revoke_approval("defender", req.chain_id, token, spender)
-                                    break
+                        orchestrator = Orchestrator()
+                        await orchestrator.run(event_context)
                     except Exception as e:
+                        import traceback
+                        traceback.print_exc()
                         print(f"Defense failed: {e}")
-                asyncio.create_task(asyncio.to_thread(do_defense))
+                asyncio.create_task(do_defense())
                 result["defense_status"] = "active"
                 
         except Exception as e:
