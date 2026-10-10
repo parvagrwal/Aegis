@@ -371,11 +371,13 @@ async def main() -> int:
     decisive_count = len(runnable) - uncertain_count
 
     generated_at = datetime.now(timezone.utc).isoformat()
+    # Record the actual RPC hosts used (redacted to scheme+host; keys never stored).
+    rpc_hosts = sorted({redact_rpc_host(u) for u in (aegis_rpc_url, mainnet_rpc_url) if u})
     provenance = {
         "generated_by": "eval/harness.py",
         "generated_at": generated_at,
         "policy_version": policy_version(),
-        "rpc_host": "multiple (mainnet, sepolia)",
+        "rpc_host": ", ".join(rpc_hosts) if rpc_hosts else "unknown",
         "cases_total": len(results),
         "runnable": len(runnable),
         "unrunnable": len(unrunnable),

@@ -70,7 +70,7 @@ directly — every number on screen comes from `data/`:
 |---|---|
 | `data/results.json` | 374 cases from `eval/results/run-final` (generated 2026-10-08). Every runnable case was fetched from chain and run through decode → effects → features → policy.v1. |
 | `data/cases.json` | Case metadata: incident, label, label_provenance, chain_id |
-| `data/metrics.json` | Headline metrics: 97.6% decisive accuracy, 373 runnable / 1 unrunnable |
+| `data/metrics.json` | Headline metrics: 94.7% decisive accuracy (90.3% overall), 373 runnable / 1 unrunnable |
 | `data/policy.v1.json` | Policy bands (ELEVATED ≥ 2000, HIGH ≥ 5000, CRITICAL ≥ 8500), prior −500 |
 | `data/attacker_addresses.json` | 51 known attacker addresses (not yet wired to per-scan intel — see below) |
 

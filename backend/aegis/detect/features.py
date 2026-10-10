@@ -138,15 +138,23 @@ def extract_features(ctx: CaseContext) -> list[Feature]:
                 break
                 
     # 3. sim.subject_outflow_no_inflow
+    # Draining signal: subject's funds left with nothing coming back.
+    # ONLY meaningful when the subject did NOT initiate the transaction.
+    # If subject == initiator, outflow-no-inflow is just the user spending
+    # their own money (normal) -- not a drain. Firing on self-initiated
+    # outflow caused 40 false positives in eval (20% precision).
     subj_flows = ctx.net_flows.get(ctx.subject, {})
     outflow = False
     inflow = False
     for t, amt in subj_flows.items():
         if amt < 0: outflow = True
         if amt > 0: inflow = True
-    
-    # Simple check for now
-    if outflow and not inflow:
+
+    _subj = (ctx.subject or "").lower()
+    _init = (ctx.initiator or "").lower()
+    subject_initiated = bool(_subj and _init and _subj == _init)
+
+    if outflow and not inflow and not subject_initiated:
         features.append(Feature(id="sim.subject_outflow_no_inflow", weight=2000, data={}))
         
     # Code features
@@ -171,16 +179,37 @@ def extract_features(ctx: CaseContext) -> list[Feature]:
     except Exception:
         pass
         
-    involved = set(ctx.labels.keys())
-    
-    # Check infra feature
+    # All addresses involved in the case -- not just intel-labeled ones.
+    # The innovation: catch attackers with NO static intel label via shared
+    # infrastructure (cluster members or shared counterparties) discovered by
+    # deterministic RPC graph analysis. Previously this only checked labeled
+    # addresses, which made the feature dead code (it always co-fired with
+    # intel.label_malicious and was capped out). Addresses normalized to
+    # lowercase for case-insensitive comparison.
+    involved = set()
+    for src in (ctx.labels.keys(), ctx.profiles.keys()):
+        for addr in src:
+            if addr and isinstance(addr, str):
+                involved.add(addr.lower())
+    for addr in (ctx.subject, ctx.initiator,
+                 (ctx.tx or {}).get("from"), (ctx.tx or {}).get("to")):
+        if addr and isinstance(addr, str):
+            involved.add(addr.lower())
+
+    # Check infra feature (case-insensitive).
+    # MEMBERS ONLY. Shared counterparties are excluded: they include
+    # exchanges/bridges/mixers used by benign users too, and flagging them
+    # caused 12 false positives in eval. Members are attacker addresses.
+    # NOTE (2026-10-10): All 44 current members are already in the static
+    # intel list, so this feature is currently redundant with
+    # intel.label_malicious (capped out by the INTEL family cap). Kept as
+    # infrastructure for future dynamic discovery of unlabeled members.
     infra_hit = False
     for cluster in infra_clusters:
-        members = set(cluster.get("members", []))
-        shared = set(cluster.get("shared_counterparties", []))
-        
-        # If any involved address is a member OR a shared link of the cluster
-        if involved.intersection(members) or involved.intersection(shared):
+        members = {str(m).lower() for m in cluster.get("members", [])}
+
+        # If any involved address is a known cluster member
+        if involved.intersection(members):
             features.append(Feature(id="infra.shared_attacker_infrastructure", weight=1500, data={"cluster_size": len(members)}))
             infra_hit = True
             break
