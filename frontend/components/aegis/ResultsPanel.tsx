@@ -76,7 +76,7 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                     btn.innerText = "Verifying on Sepolia...";
                     btn.disabled = true;
                     try {
-                      const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+                      const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8080";
                       const res = await fetch(backend + "/api/v1/cases/" + result.tx_hash + "/verify", {
                         method: "POST",
                         headers: {"Content-Type": "application/json"},
@@ -119,7 +119,7 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                     btn.disabled = true;
                     btn.innerText = "LOADING...";
                   try {
-                     const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+                     const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8080";
                      const res = await fetch(backend + "/api/v1/clusters");
                      const data = await res.json();
                      const out = document.getElementById("clusters-output");
@@ -182,7 +182,7 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                   input.value = "Analyzing context...";
                   input.disabled = true;
                   try {
-                     const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+                     const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8080";
                      const res = await fetch(backend + "/api/v1/cases/" + result.tx_hash + "/ask", {
                        method: "POST",
                        headers: {"Content-Type": "application/json"},
@@ -233,7 +233,7 @@ export default function ResultsPanel({ result, loading }: { result: ScanResult|n
                   input.value = "Analyzing context...";
                         input.disabled = true;
                         try {
-                           const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+                           const backend = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8080";
                            const res = await fetch(backend + "/api/v1/cases/" + result.tx_hash + "/ask", {
                              method: "POST",
                              headers: {"Content-Type": "application/json"},
